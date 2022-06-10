@@ -254,7 +254,7 @@ observadorSkills.observe(skillAnimacion);
     d.documentElement.style.setProperty("--container","#e5e5e5");
     d.documentElement.style.setProperty("--logo-nav-color","#4086ff");
     d.documentElement.style.setProperty("--nav-color","#000");
-    $imgBoton.src="../img/brightness-high-fill.svg"
+    $imgBoton.src="/img/brightness-high-fill.svg"
     $navbarColor.style.backgroundColor="#fff"
     $menuNavcolor.style.backgroundColor="rgba(255, 255, 255, 1)"
     $botonTema.setAttribute('data-theme','light')
@@ -268,7 +268,7 @@ observadorSkills.observe(skillAnimacion);
     d.documentElement.style.setProperty("--nav-color","#ffffff");
     $navbarColor.style.backgroundColor="transparent"
     $menuNavcolor.style.backgroundColor="rgba(0, 0, 0, 0.8)"
-    $imgBoton.src="../img/moon-fill.svg"
+    $imgBoton.src="/img/moon-fill.svg"
     $botonTema.setAttribute('data-theme','dark')
   }
 
