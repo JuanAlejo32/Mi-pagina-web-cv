@@ -266,7 +266,7 @@ observadorSkills.observe(skillAnimacion);
     d.documentElement.style.setProperty("--container","#1b1c1f ");
     d.documentElement.style.setProperty("--logo-nav-color","#4040ff");
     d.documentElement.style.setProperty("--nav-color","#ffffff");
-    $navbarColor.style.backgroundColor="transparent"
+    $navbarColor.style.backgroundColor=""
     $menuNavcolor.style.backgroundColor="rgba(0, 0, 0, 0.8)"
     $imgBoton.src="img/moon-fill.svg"
     $botonTema.setAttribute('data-theme','dark')
