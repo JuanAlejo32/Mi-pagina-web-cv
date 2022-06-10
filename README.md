@@ -4,4 +4,4 @@
 
 [Landing page portafolio CV]
 
-https://juanalejo32.github.io/Mi-pagina-web-cv/HojadeVida/
+https://juanalejo32.github.io/Mi-pagina-web-cv/CV/
