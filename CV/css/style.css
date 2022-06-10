@@ -2,13 +2,19 @@
   --firts-color: #ffffff;
   --second-color: #000000;
   --logo-color: #4040ff;
+  --logo-white-theme:#4086ff;
   --max-width: 1200px;
   --black-bg: #0f1013;
+  --black-bg-logo-container:#0f1013;
+  --color-text-logo:#ffffff;
   --black2-bg: #1b1c1f;
   --title-center: center;
   --title-margin: 1.5rem 0;
   --font-logo: "Righteous", sans-serif;
   --font-text: "Work Sans", sans-serif;
+  --container: #252a2e;
+  --logo-nav-color:#4040ff;
+  --nav-color: #ffffff;
 }
 
 /*********Resets *******/
@@ -128,6 +134,10 @@ p {
 
 /***********************************/
 
+.header{
+  background-color: transparent;
+}
+
 .reveal-header{
   opacity: 0;
   transform: scale(0.2) translateY(150px);
@@ -149,13 +159,26 @@ p {
   transform: scale(1);
 }
 
+/************************Boton tema****************************/
+
+.tema{
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+
+
 /*******************Logo***************************/
 
 .logo h1 {
   font-family: var(--font-logo);
-  color: var(--logo-color);
-  font-size: 2.2vw;
-  
+  font-size: 2.2vw;  
 }
 
 .logo a {
@@ -223,13 +246,11 @@ p {
 .container-h {
   display: flex;
   flex-direction: column;
-  background-color: #000000;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   background-color: transparent;
-
 }
 
 .container-h .line {
@@ -238,7 +259,7 @@ p {
   height: 4px;
   border-radius: 10px;
   margin: 2px 2px;
-  background-color: #4040ff;
+  background-color: var(--logo-color);
 }
 
 .button-h .line1 {
@@ -281,7 +302,7 @@ p {
   position: absolute;
   width: 100%;
   height: 1px;
-  background: var(--firts-color);
+  background: var(--logo-color);
   top: 110%;
   left: 0;
 }
@@ -306,10 +327,7 @@ p {
 .text-fill {
   font-size: 1rem;
   overflow: hidden;
-  background: linear-gradient(to right,
-      var(--logo-color),
-      var(--logo-color) 50%,
-      var(--firts-color) 50%);
+  background: linear-gradient(to right,var(--logo-nav-color),var(--logo-nav-color) 50%, var(--nav-color) 50%);
   /**Colores del background 50% blanco 50% azul*/
   background-clip: text;
   /*Define el contenido que va ocupar el background, en este caso solo el texto*/
@@ -359,7 +377,7 @@ p {
 .container-logo {
   display: grid;
   grid-template-rows: 30% 70%;
-  background-color: var(--black-bg);
+  background-color: var(--black-bg-logo-container);
   margin: auto;
   width: 31rem;
   height: 6rem;
@@ -374,7 +392,7 @@ p {
   bottom: 1.8rem;
   font-size: 2.6rem;
   font-family: var(--font-logo);
-  color: var(--firts-color);
+  color: var(--color-text-logo);
   text-align: center;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
@@ -419,14 +437,6 @@ svg {
   font-family: var(--font-text);
 }
 
-.text-skills {
-  color: var(--logo-color);
-  font-family: var(--font-text);
-}
-
-.text-skills small {
-  color: var(--firts-color);
-}
 
 .profile-picture {
   align-content: center;
@@ -465,7 +475,7 @@ svg {
   padding: 1rem;
   margin-top: 1rem;
   margin-right: 1rem;
-  background: #1b1c1f;
+  background: var(--black2-bg);
   margin-top: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
@@ -501,6 +511,16 @@ svg {
 .background2 {
   background-color: var(--black2-bg);
 }
+
+.text-skills {
+  color: var(--logo-color);
+  font-family: var(--font-text);
+}
+
+.text-skills small {
+  color: var(--firts-color);
+}
+
 
 .container-skills {
   display: grid;
@@ -553,7 +573,7 @@ svg {
   width: 95%;
   height: 7px;
   border-radius: 15px;
-  background: #121517;
+  background: var(--black-bg);
 }
 
 .progressing {
@@ -634,12 +654,16 @@ svg {
   border: 0;
   border-radius: 2px;
   box-shadow: 0px 18px 18px 0 rgb(0 0 0 / 20%);
-  border: var(--firts-color) thin solid;
-  color: var(--firts-color);
+  border: #ffffff thin solid;
+  color: #ffffff;
   width: 12rem;
   text-decoration: none;
  
   transition: background-color 250ms ease-in-out;
+}
+
+.proyecto-info p{
+  color: #ffffff;
 }
 
 
@@ -712,7 +736,7 @@ svg {
   color: var(--firts-color);
   height: 50px;
   padding: 18px;
-  background-color: #252a2e;
+  background-color:var(--container);
   margin: 1rem 0;
   font-family: var(--font-text);
   font-size: 15px;
@@ -724,7 +748,7 @@ svg {
 
 .form-container textarea {
   color: var(--firts-color);
-  background-color: #252a2e;
+  background-color: var(--container);
   padding: 18px;
   grid-column: span 2;
   font-family: var(--font-text);
@@ -759,7 +783,7 @@ button {
   position: relative;
   height: 50px;
   padding: 15px;
-  background-color: #252a2e;
+  background-color:var(--container);
   margin: 1rem 0;
   font-family: var(--font-text);
   font-size: 15px;
@@ -871,7 +895,7 @@ footer p{
   /************nav-color****************/
 
   .nav-color {
-    background: rgba(0, 0, 0, 0.9);
+    background: var(--black-bg);
 
   }
 
@@ -1035,9 +1059,9 @@ footer p{
     align-items: flex-end;
     margin: 0;
     padding: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     width: 40%;
-    border-radius: 10px 0 0 10px;
+    border-radius: 0 0 0 10px;
 
   }
 
@@ -1109,3 +1133,4 @@ footer p{
 
 
 };
+
