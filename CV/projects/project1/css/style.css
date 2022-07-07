@@ -1011,7 +1011,7 @@ footer {
   }
 
   .off-hero-img {
-    background-image: url(/img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
+    background-image: url(../img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 140vw;
@@ -1060,7 +1060,7 @@ footer {
   }
 
   .off-hero-img {
-    background-image: url(/img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
+    background-image: url(../img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 120vw;
@@ -1131,7 +1131,7 @@ footer {
   }
 
   .main-hero-img {
-    background: url(/img/landing/hero-img.png), var(--color-bg-primary);
+    background: url(../img/landing/hero-img.png), var(--color-bg-primary);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 210%;
@@ -1139,7 +1139,7 @@ footer {
   }
 
   .off-hero-img {
-    background-image: url(/img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
+    background-image: url(../img/landing/landing-hero.png), linear-gradient(180deg, rgba(16, 21, 53, 0) 50%, #101535 100%);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 140vw;
