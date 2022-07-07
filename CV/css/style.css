@@ -23,7 +23,6 @@ html {
   font-family: var(--font);
   font-size: 16px;
   scroll-behavior: smooth;
-
 }
 
 *,
@@ -124,6 +123,10 @@ p {
 
 
 /*******************Efectos de desplazamiento***************************/
+
+article{
+  scroll-margin-top: 4ex;
+}
 
 .reveal {
   transform: translateY(100px);
@@ -516,6 +519,7 @@ svg {
 .container-titles-skills h2{
   text-align: center;
   padding:2rem;
+  border-bottom: 2px solid var(--logo-color);
 } 
 
 .container-studies-skills{
@@ -1058,7 +1062,7 @@ footer p {
     display: grid;
     grid-template-areas:"c-studies"
                         "c-skills";
-    grid-template-columns: 90%;
+    grid-template-columns: 100%;
     justify-content: center;
   }
 
