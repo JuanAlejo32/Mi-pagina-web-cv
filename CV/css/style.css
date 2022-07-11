@@ -17,6 +17,7 @@
   --nav-color: #ffffff;
 }
 
+
 /*********Resets *******/
 html {
   box-sizing: border-box;
@@ -120,7 +121,10 @@ p {
 .background2 {
   background-color: var(--black2-bg);
 }
-
+/********************************Seccion de impresion*************************************/
+#print{
+  display: none;
+}
 
 /*******************Efectos de desplazamiento***************************/
 
@@ -464,10 +468,17 @@ svg {
   grid-template-areas: "profile mis-datos intereses";
 }
 
-.container-hobbies {
+.container-hobbies {  
   display: flex;
   flex-direction: row;
 }
+
+.container-hobbies h4{  
+  pointer-events: none;
+}
+
+
+
 
 .videojuegos,
 .cine,
@@ -486,6 +497,7 @@ svg {
   width: 150px;
   transition: background-color 200ms ease-in-out;
 }
+
 
 .mis-datos {
   grid-area: mis-datos;
@@ -926,6 +938,25 @@ footer p {
   text-align: center;
 }
 
+/***************Style repositorio**********************/
+
+.repositorio h2{
+  color: var(--black-bg);
+  font-size: 3vw !important;
+}
+
+.container-repo{
+  height: auto;
+  width: 45vw;
+  border: thick solid var(--black-bg);
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.link-repo{
+  text-align: start;
+}
+
 /********Media query*************/
 
 @media screen and (max-width: 768px) {
@@ -1197,8 +1228,6 @@ footer p {
 
 }
 
-
-
 @media screen and (min-width: 1025px) {
   .podcast,
   .videojuegos,
@@ -1210,3 +1239,4 @@ footer p {
     font-size: 1vw;
   }
 } ;
+
