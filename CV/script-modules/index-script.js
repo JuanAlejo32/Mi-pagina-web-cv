@@ -13,23 +13,27 @@ const d = document;
 
 d.addEventListener("DOMContentLoaded",(e) =>{
     /////////////////////////////////////////////////////////////////////////
+    //Cambia el tema
     theme()
 
-
     /////////////////////////////////////////////////////////////////////////
+    //Formulario de contacto
     formMail()
+    
     ///////////////////////////////////////////////////////////////////////
+    //Effectos Scale para la pagina
     scaleEffect(".scale","scale-active")
     scaleEffect(".reveal-header","active-header")
 
-
     ///////////////////////////////////////////////////////////////////////
+    //Funcion boton de hamburguesa
     hamburguerButton("#h1",".navbar",".menu-nav a","closet")
 
     ///////////////////////////////////////////////////////////////////////
     //primer parametro hace referencia a la resolucion maxima o minima a cambiar el texto
-    //segundo parametro hace referencia el texto que se quiere ver en la version de escritorio de la pagina
-    //tercer parametro hace referencia al texto que se quiere ver en la version mobile de la pagina
+    //segundo parametro hace referencia al elemento del DOM al que se quiere cambiar el texto
+    //tercer parametro hace referencia el texto que se quiere ver en la version de escritorio de la pagina
+    //cuarto parametro hace referencia al texto que se quiere ver en la version mobile de la pagina
      responsiveText("(max-width:768px)",".container-logo h2","PROGRAMADOR JUNIOR","JUNIOR DEV")
 
 

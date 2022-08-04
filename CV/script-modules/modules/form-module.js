@@ -29,7 +29,7 @@ export function formMail(){
         $formloader.classList.add("none");
         $formboton.classList.remove("none");
         setTimeout(() => {
-          location.hash = "#close";
+          location.hash = "#";
         }, 3000);
       });
   });
