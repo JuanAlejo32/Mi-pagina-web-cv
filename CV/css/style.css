@@ -215,7 +215,7 @@ article{
   display: flex;
   flex-direction: row;
   margin-right: 4rem;
-  transition: 356ms all ease;
+  transition: 0ms all ease;
 }
 
 .menu-nav a {
