@@ -8,7 +8,7 @@ export function hamburguerButton (element1,element2,element3,element4){
 
     if (e.target.matches(element3)) {
         d.querySelector(element2).classList.toggle(element4);
-        element1.checked =false
+       d.querySelector(element1).checked = false;
     }
   })
 }
