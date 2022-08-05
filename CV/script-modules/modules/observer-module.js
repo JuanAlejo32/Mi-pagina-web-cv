@@ -70,9 +70,7 @@ export function BarProgressBar(entradaBar,direccion) {
 //posteriormente este elemento puede ser tomado por una funcion
 export function scrollFunctionTriggerD(functionTrigger, domObserver) {
   const observerElement = (entradas, observer) => {
-    entradas
-      .filter((entrada) => entrada.isIntersecting)
-      .forEach((entrada) => {
+    entradas.filter((entrada) => entrada.isIntersecting).forEach((entrada) => {
         functionTrigger(entrada.target);
         observer.disconnect(); //Solo se ejecutara una vez cuando el elemento haya pasado por la pantalla
       });
@@ -85,5 +83,33 @@ export function scrollFunctionTriggerD(functionTrigger, domObserver) {
     });
     observer.observe(element);
   });
+}
+
+export function scrollSpy(){
+
+const secciones = d.querySelectorAll("article[id]");
+
+const disparador = (analizarid) => {
+  analizarid.forEach((idanalizada) => {
+    const id = idanalizada.target.getAttribute("id");
+
+    if (idanalizada.isIntersecting) {
+      d.querySelector(`div a[href="#${id}"]`).classList.add("hover-indicator");
+
+    } else {
+      d.querySelector(`div a[href="#${id}"]`).classList.remove("hover-indicator");
+      
+    }
+  });
+};
+
+const observadorHover = new IntersectionObserver(disparador, {
+  root: null,
+  threshold: 0.3,
+});
+
+secciones.forEach((seccion) => {
+  observadorHover.observe(seccion);
+});
 }
 

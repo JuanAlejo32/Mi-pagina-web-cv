@@ -1,13 +1,13 @@
 /*******************Efectos scrolls y navbar********************* */
 
-const dom = document.querySelector("#inicio"),
-  header = document.querySelector("header"),
-  scrolling = document.querySelectorAll(".reveal"),
-  skillAnimacion = document.querySelector(".wrapper-progress"),
-  lineBarsr = document.querySelectorAll(".line-bar .line-right"),
-  lineBarsl = document.querySelectorAll(".line-bar .line-left"),
-  circleRight = document.querySelectorAll(".circle-right"),
-  circleLeft = document.querySelectorAll(".circle-left");
+// const dom = document.querySelector("#inicio"),
+//   header = document.querySelector("header"),
+//   scrolling = document.querySelectorAll(".reveal"),
+//   skillAnimacion = document.querySelector(".wrapper-progress"),
+//   lineBarsr = document.querySelectorAll(".line-bar .line-right"),
+//   lineBarsl = document.querySelectorAll(".line-bar .line-left"),
+//   circleRight = document.querySelectorAll(".circle-right"),
+//   circleLeft = document.querySelectorAll(".circle-left");
 
 
 
@@ -90,38 +90,38 @@ const dom = document.querySelector("#inicio"),
 
 /****************Indicador Link funcion*********************** */
 
-const secciones = document.querySelectorAll("article[id]");
+// const secciones = document.querySelectorAll("article[id]");
 
-const disparador = (analizarid) => {
-  analizarid.forEach((idanalizada) => {
-    const id = idanalizada.target.getAttribute("id");
+// const disparador = (analizarid) => {
+//   analizarid.forEach((idanalizada) => {
+//     const id = idanalizada.target.getAttribute("id");
 
-    if (idanalizada.isIntersecting) {
-      document
-        .querySelector(`div a[href="#${id}"]`)
-        .classList.add("hover-indicator");
-      document
-        .querySelector(`div a[href="#${id}"]`)
-        .classList.remove("hover-effect");
-    } else {
-      document
-        .querySelector(`div a[href="#${id}"]`)
-        .classList.remove("hover-indicator");
-      document
-        .querySelector(`div a[href="#${id}"]`)
-        .classList.add("hover-effect");
-    }
-  });
-};
+//     if (idanalizada.isIntersecting) {
+//       document
+//         .querySelector(`div a[href="#${id}"]`)
+//         .classList.add("hover-indicator");
+//       document
+//         .querySelector(`div a[href="#${id}"]`)
+//         .classList.remove("hover-effect");
+//     } else {
+//       document
+//         .querySelector(`div a[href="#${id}"]`)
+//         .classList.remove("hover-indicator");
+//       document
+//         .querySelector(`div a[href="#${id}"]`)
+//         .classList.add("hover-effect");
+//     }
+//   });
+// };
 
-const observadorHover = new IntersectionObserver(disparador, {
-  root: null,
-  threshold: 0.3,
-});
+// const observadorHover = new IntersectionObserver(disparador, {
+//   root: null,
+//   threshold: 0.3,
+// });
 
-secciones.forEach((seccion) => {
-  observadorHover.observe(seccion);
-});
+// secciones.forEach((seccion) => {
+//   observadorHover.observe(seccion);
+// });
 
 /*********************Efecto Scale********************** */
 

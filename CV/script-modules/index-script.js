@@ -1,9 +1,10 @@
 import { scaleEffect } from "./modules/effect-module.js";
 import { formMail } from "./modules/form-module.js";
 import { hamburguerButton } from "./modules/hamburger-button.js";
-import { navbarBackgroundColor,scrollFunctionTriggerD,AddclassActive,derecha,izquierda} from "./modules/observer-module.js";
+import { navbarBackgroundColor,scrollFunctionTriggerD,AddclassActive,derecha,izquierda, scrollSpy} from "./modules/observer-module.js";
 import { responsiveText } from "./modules/responsive-text.js";
 import { theme } from "./modules/theme-module.js";
+
 
 
 const d = document;
@@ -12,6 +13,8 @@ const d = document;
 
 
 d.addEventListener("DOMContentLoaded",(e) =>{
+    scrollSpy()
+    
     /////////////////////////////////////////////////////////////////////////
     //Cambia el tema
     theme()

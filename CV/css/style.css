@@ -753,7 +753,7 @@ svg {
 
 .proyecto-info p {
   text-align: center;
-  padding-top: 5rem;
+  padding: 1rem;
   transition: all 250ms ease-in-out;
 }
 
