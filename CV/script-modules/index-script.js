@@ -37,7 +37,7 @@ d.addEventListener("DOMContentLoaded",(e) =>{
     //segundo parametro hace referencia al elemento del DOM al que se quiere cambiar el texto
     //tercer parametro hace referencia el texto que se quiere ver en la version de escritorio de la pagina
     //cuarto parametro hace referencia al texto que se quiere ver en la version mobile de la pagina
-     responsiveText("(max-width:768px)",".container-logo h2","DESARROLLADOR JUNIOR","JUNIOR DEV")
+     responsiveText("(max-width:768px)",".container-logo h2","PROGRAMADOR JUNIOR","JUNIOR DEV")
 
 
     //////////////////////////////////////////////////////////////////
