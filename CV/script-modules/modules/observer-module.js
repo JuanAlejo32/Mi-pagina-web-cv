@@ -98,7 +98,6 @@ const disparador = (analizarid) => {
 
     } else {
       d.querySelector(`div a[href="#${id}"]`).classList.remove("hover-indicator");
-      
     }
   });
 };
