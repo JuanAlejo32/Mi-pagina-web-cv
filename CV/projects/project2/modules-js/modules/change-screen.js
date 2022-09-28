@@ -122,7 +122,7 @@ export const TransitionmusicPlayer = () =>{
         d.querySelector(".container-menu-aside").classList.add("effect-m-aside") 
         d.querySelector(".block-m-aside").style.display = "none"
         d.querySelector(".block-f-aside").classList.add("reveal")
-        d.querySelector(".block-vacio-list").style.display = "flex"
+        d.querySelector(".block-f-aside").style.display = "flex"
       }
 
 
