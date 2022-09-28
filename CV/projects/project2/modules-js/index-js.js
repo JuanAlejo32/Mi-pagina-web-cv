@@ -58,6 +58,14 @@ document.addEventListener("click", e =>{
                 loadPlaylistname();
         }
 
+        if (e.target.matches(".mb-add-playlist")) {
+                loadPlaylistname();
+        }
+
+        if (e.target.matches(".track-icon-pl")) {
+                loadPlaylistname();
+        }
+
         if (e.target.matches(".track-icon-pl")) {
                 loadPlaylistname();
                 addtrackFavtoplay(e);
