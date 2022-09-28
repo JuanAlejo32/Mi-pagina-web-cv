@@ -2203,6 +2203,10 @@ label:before {
     width: 50vw;
     height: 50vw;
   }
+
+  .gender-g{
+    font-size: 0.8rem;
+  }
   
   
   .block-music-control{
