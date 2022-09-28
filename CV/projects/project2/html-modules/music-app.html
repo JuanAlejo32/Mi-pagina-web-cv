@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap'" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/projects/project2/css/style.css" />
+  <title>Document</title>
+  <!-- <script src="/projects/project2/modules-js/modules/include-html.js"></script> -->
+</head>
+
+<body>
+  <main class="container-no-margin">
+    <div class="container-mb">
+      <div class="container-main-slide">
+        <div class="slider-menu">
+          <section class="main-menu" id="main">
+            <div class="container-discover">
+              <div class="container-logo-p">
+                <h1 class="logo-principal">PJ2</h1>
+              </div>
+              <div class="container-discover-title">
+                <h2 class="discover-title">DESCUBRE</h2>
+              </div>
+
+              <div class="container-discover-slider">
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide discover-slider">
+                      <div class="bg-discover" id="bg-d-1" data-id_track="6556887484" data-url_img ="../img/bg-discover/1.jpg">
+                        <h3 class="discover-sub-title">
+                          Nuevos lanzamientos
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide discover-slider">
+                      <div class="bg-discover" id="bg-d-2" data-id_track="3155776842" data-url_img  ="../img/bg-discover/2.jpg">
+                        <h3 class="discover-sub-title">TOP Hits</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide discover-slider">
+                      <div class="bg-discover" id="bg-d-3" data-id_track="1098908237" data-url_img  ="../img/bg-discover/bg-cover1.jpeg">
+                        <h3 class="discover-sub-title">Exitos Colombia</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-top-artists">
+              <div class="container-title-ta">
+                <h2 class="ta-title">ARTISTAS RECOMENDADOS</h2>
+              </div>
+              <div class="block-top-artists">
+                <template class="template-card-artists">
+                  <div class="card-artists">
+                    <div class="card-a-body">
+                      <canvas id="img-artists" ></canvas>
+                      <img src="../img/img-artistas/bzrp.jpg" alt="" id="artists-picture-1" />
+                    </div>
+                    <h3 class="card-artists-name">BZRP</h3>
+                  </div>
+                </template>
+
+              </div>
+            </div>
+
+            <div class="container-musicals-gender">
+              <div class="container-mg-title">
+                <h2 class="mg-title">GENEROS</h2>
+              </div>
+
+              <div class="block-gender-musicals">
+                <div class="swiper-container-g">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-1" data-id_track="785439903" data-url_img ="../img/img-genders/pop.png">
+                        <h3 class="gender-music-title">POP</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-2" data-id_track="1306931615" data-url_img ="../img/img-genders/rock.jpg">
+                        <h3 class="gender-music-title">ROCK</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-3" data-id_track="1273315391" data-url_img ="../img/img-genders/reggaeton.jpg">
+                        <h3 class="gender-music-title gender-g">REGGAETON</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-4" data-id_track="706093725" data-url_img ="../img/img-genders/edm.jpg">
+                        <h3 class="gender-music-title">EDM</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-5" data-id_track="9607960302" data-url_img ="../img/img-genders/lowfi.webp">
+                        <h3 class="gender-music-title">LOW FI</h3>
+                      </div>
+                    </div>
+                    <div class="swiper-slide mg-slider">
+                      <div class="bg-music-g" id="bg-g-6" data-id_track="1677006641" data-url_img ="../img/img-genders/hiphop.jpg" >
+                        <h3 class="gender-music-title">HIP HOP/RAP</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="seccion-menu" id="searchs">
+            <div class="container-search">
+              <div class="block-title-search">
+                <h2 class="b-title-search">Buscar</h2>
+              </div>
+              <form id="search-track">
+              <label>
+                <input class="block-search" type="search" placeholder="  Artistas, canciones . . ." name="busqueda" />
+              </label>
+            </form>
+            </div>
+            <div class="container-loader">
+              <img src="../img/loader.gif" alt="Loader">
+            </div>
+            
+            <div class="container-search-list">
+              <template class="block-track-musics">
+                <div class="container-track-music show">
+                  
+                <div class="block-infotrack">
+                <img class="search-img-track" src="../img/album-cover/test3.jpg" alt="cover-track" />
+                <div class="block-t-b">
+                  <h2 class="search-track-title">Lorem Nightmare</h2>
+                  <span class="search-artist-title">Dreams</span>
+                </div>
+              </div>
+                <div class="block-p-t">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="35" fill="currentColor"
+                    class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path
+                      d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </div>
+              </div>
+              </template>
+
+            </div>
+          </section>
+          <section class="seccion-menu" id="playlists">
+            <div class="container-add-palylist">
+              <div class="container-bg-playlist">
+              <div class="block-title-playlist">
+                <h2 class="b-title-playlist">Tus Playlist</h2>
+              </div>
+            </div>
+              <div class="block-playlist-add">
+                <div class="block-create-playlist">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <h2>Crear Playlist</h2>
+              </div>
+             </div>
+             <div class="container-playlist-list">
+             <template class="template-select-playlist">
+              <div class="container-select-playlist">
+                <div class="block-select-playlist">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-play-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                  </svg>
+                  <h2 class="track-playlist-title">Test playlist 1</h2>
+                </div>
+                <div class="block-delete-playlist">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </div>
+              </div>
+  
+             </template>
+            </div>
+            <div class="modal-add-playlist">
+              <div class="box-error-playlist-number">
+                <h2>Error :(  <br>No se pueden crear mas Playlist!</h2>
+              </div>
+              <div class="box-error-playlist-name">
+                <h2>Error :(  <br> Ya agregaste una playlist con ese nombre !</h2>
+              </div>
+              <div class="box-error-playlist">
+                <h2>Error !, por favor ingrese un nombre que contenga mas de 4 caracteres</h2>
+              </div>
+              <div class="box-pass-playlist">
+               <img src="../img/check.jpg" alt="check-icon">
+              </div>
+              <div class="box-playlist">
+                <input type="text" id="res-playlist"name="create-playlist" placeholder="Digite nombre de la Playlist">
+                <div class="box-btn-playlist">
+                  <input type="button" value="Crear" id="p-crear">
+                  <input type="button" value="Cancelar" id="p-delete">
+                </div>
+              </div>
+              <div class="box-playlist-check">
+                <h2>Confirma, si deseas eliminar la Playlist</h2>
+                <div class="box-btn-playlist">
+                  <input type="button" value="SI" id="c-yes">
+                  <input type="button" value="NO" id="c-no">
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+          <section class="seccion-menu" id="favs">
+            <div class="container-add-favs">
+              <div class="container-bg-favs">
+              <div class="block-title-favs">
+                <h2 class="b-title-favs">Tus canciones favoritas</h2>
+              </div>
+              <div class="container-play-fav">
+                <button class="block-play-fav">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="red" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="block-add-fav">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg>
+              <h2 class="title-add-tracks">Agregar canciones</h2>
+            </div>
+              <div class="container-fav-track">
+                <template class="container-track-fav">
+                  <div class="block-track-fav show-block">
+                    <div class="block-fav">
+                    <img src="../img/album-cover/linkn-park.webp" alt="">
+                    <div class="track-title-al">
+                      <h2>Final Masquerade </h2>
+                      <h1>Linkin park</h1>
+                    </div>
+                  </div>
+                    <div class="track-fav-submenu">
+                      <div class="track-icon-fav">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                          <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                        </svg>
+                    </div>
+                    <div class="track-icon-pl">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                      </svg>
+                      </div>
+                    </div>
+                 </div>
+                </template>     
+            </div>
+          </div>
+          </section>
+
+          <section class="seccion-menu" id ="template-playlist">
+            <div class="container-add-palylist">
+              <div class="container-bg-playlist-template">
+              <div class="block-title-playlist">
+                <h2 class="d-title-playlist">Tus Playlist</h2>
+              </div>
+              <template class="block-track-musicplay">
+                <div class="container-track-music show">
+                  
+                <div class="block-infotrack">
+                <img class="search-img-track" src="../img/album-cover/test3.jpg" alt="cover-track" />
+                <div class="block-t-b">
+                  <h2 class="search-track-title">Lorem Nightmare</h2>
+                  <span class="search-artist-title">Dreams</span>
+                </div>
+              </div>
+                <div class="block-p-t">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="35" fill="currentColor"
+                    class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                    <path
+                      d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                  </svg>
+                </div>
+              </div>
+              </template>
+              <div class="container-play-fav-template">
+                <button class="block-play-fav-template">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" fill="red" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                  </svg>
+                </button>
+              </div>             
+            </div>
+            <div class="block-add-music">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+              </svg>
+              <h2 class="title-add-tracks">Agregar canciones</h2>
+            </div>
+            <div class="container-loader-artists">
+              <img src="../img/loader.gif" alt="Loader">
+            </div>
+            <div class="block-music-playlist">
+             
+              <template class="block-track-music-list">
+                <div class="container-track-music show">
+
+                <div class="block-infotrack">
+                <img class="search-img-track" src="../img/album-cover/test3.jpg" alt="cover-track" />
+                <div class="block-t-b">
+                  <h2 class="search-track-title">Lorem Nightmare</h2>
+                  <span class="search-artist-title">Dreams</span>
+                </div>
+              </div>
+                <div class="block-p-t-t">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                  </svg>
+                </div>
+              </div>
+              </template>
+            </div>
+
+             
+          </section>
+        </div>
+        <aside class="container-media-player">
+          <div class="media-player">
+            <div class="container-nav-media">
+              <div class="logo-down-arro">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                </svg>
+              </div>
+              <div class="logo-x">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-x-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </div>
+            </div>
+            <div class="container-cover-track">
+              <div class="cover-tracks">
+ 
+                <canvas id="img-canvas" ></canvas>
+                <img src="../img/album-cover/test2.jpg" alt="" />
+                <div class="container-seek-bar">
+                  <div class="block-seek-bar">
+                    <span class="indicator-seek-bar"></span>
+                  </div>
+                  <div class="container-timer">
+                    <span class="min-start">0:00</span>
+                    <span class="min-finish">0:30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block-media-player">
+              <div class="container-title-track">
+                <h3 class="title-album">The hunting Party</h3>
+                <h2 class="title-track">Final Masquerade </h2>
+                <h3 class="title-artist">Linkin Park</h3>
+              </div>
+              <div class="container-audio">
+                <audio src="" id="audio-player"></audio>
+              </div>
+              <div class="block-music-player">
+                <button class="mb-backward">
+                  <svg viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M64 468V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v176.4l195.5-181C352.1 22.3 384 36.6 384 64v384c0 27.4-31.9 41.7-52.5 24.6L136 292.7V468c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12z" />
+                  </svg>
+                </button>
+                <button class="mb-play">
+                  <div class="svg-play">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" class="bi bi-play" viewBox="0 0 16 16">
+                      <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                    </svg>
+                  </div>
+                  <div class="svg-pause">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" class="bi bi-pause" viewBox="0 0 16 16">
+                      <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                  </div>
+                </button>
+                <button class="mb-forward">
+                  <svg viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M384 44v424c0 6.6-5.4 12-12 12h-48c-6.6 0-12-5.4-12-12V291.6l-195.5 181C95.9 489.7 64 475.4 64 448V64c0-27.4 31.9-41.7 52.5-24.6L312 219.3V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12z" />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="block-music-control">
+                <button class="mb-favorite">
+                  <div class="block-favorite-stroke">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-suit-heart" viewBox="0 0 16 16">
+                    <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                  </svg>
+                  </div>
+                  <div class="block-favorite-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                      <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                    </svg>
+                </div>
+                </button>
+                <button class="mb-repeat">
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97"
+                    style="enable-background: new 0 0 384.97 384.97" xml:space="preserve">
+                    <path id="Loop" d="M360.909,17.934H24.061C10.767,17.934,0,28.713,0,41.995V258.54c0,13.293,10.767,24.061,24.061,24.061h60.152
+               c7.711,0,12.03-5.45,12.03-12.03c0-6.581-4.09-12.187-12.03-12.187H38.738c-8.036,0-14.557-6.52-14.557-14.557V57.093
+               c0-8.036,6.52-14.557,14.557-14.557l307.627-0.373c8.036,0,14.557,6.52,14.557,14.557v187.107c0,8.036-6.52,14.557-14.557,14.557
+               H209.556l62.413-63.303c4.692-4.752,4.692-12.439,0-17.191c-4.704-4.74-12.319-4.74-17.011,0l-83.009,84.2
+               c-4.692,4.74-4.692,12.439,0,17.191c0,0,0,0,0.012,0l82.997,84.2c4.692,4.74,12.319,4.74,17.011,0
+               c4.692-4.752,4.692-12.439,0-17.179l-62.774-63.688h151.714c13.293,0,24.061-10.767,24.061-24.061V42.007
+               C384.97,28.713,374.203,17.934,360.909,17.934z" />
+                  </svg>
+                </button>
+                <button class="mb-add-playlist">
+                  <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 18H20M22 18H20M20 18V16M20 18V20" stroke="var(--blackYwhite)" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M2 11L20 11" stroke="var(--blackYwhite)" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M2 17L14 17" stroke="var(--blackYwhite)" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M2 5L20 5" stroke="var(--blackYwhite)" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="block-media-mini-player hidden-mini-player">
+            <div class="block-img-mini-player">
+              <img src="../img/album-cover/linkn-park.webp" alt="">
+              <div class="title-track-mini">
+              <h2>Final Masquerade</h2>
+              <span>Linkin Park</span>
+            </div>
+            </div>
+            <div class="control-mini-player">
+              <div class="mini-backward">
+                <svg viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M64 468V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v176.4l195.5-181C352.1 22.3 384 36.6 384 64v384c0 27.4-31.9 41.7-52.5 24.6L136 292.7V468c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12z" />
+                </svg>
+            </div>
+            <div class="mini-play mb-play">
+              <div class="svg-play">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" class="bi bi-play" viewBox="0 0 16 16">
+                  <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                </svg>
+              </div>
+              <div class="svg-pause">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" class="bi bi-pause" viewBox="0 0 16 16">
+                  <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="mini-forward">
+              <svg viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M384 44v424c0 6.6-5.4 12-12 12h-48c-6.6 0-12-5.4-12-12V291.6l-195.5 181C95.9 489.7 64 475.4 64 448V64c0-27.4 31.9-41.7 52.5-24.6L312 219.3V44c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12z" />
+              </svg>
+            </div>
+            </div>
+          </div>
+        </aside>
+        <nav class="menu-nav-music">
+          <button href="#inicio" class="icons-menu" id="inicio">
+            <svg width="24px" height="24px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M208,227.999h-.00195l-48.00684-.00634a20.02261,20.02261,0,0,1-19.99707-20v-44.001h-24v44.001a20.02282,20.02282,0,0,1-19.99805,20l-47.99316.00634A20.00016,20.00016,0,0,1,28,207.999V115.53857a20.03619,20.03619,0,0,1,6.54687-14.79882l79.99219-72.7334a19.92168,19.92168,0,0,1,26.90821-.002l80.00683,72.73584A20.046,20.046,0,0,1,228,115.53906v92.46a20.00016,20.00016,0,0,1-20,20Zm-44.00586-24.00586L204,203.99854V117.30811L127.99414,48.21,52,117.30811v86.69043l39.99414-.00538V159.9917a20.0226,20.0226,0,0,1,20-20h32a20.0226,20.0226,0,0,1,20,20Z" />
+            </svg>
+          </button>
+          <button href="#busqueda" class="icons-menu" id="busqueda">
+            <svg width="24px" height="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 183.792 183.792"
+              style="enable-background: new 0 0 183.792 183.792" xml:space="preserve">
+              <path
+                d="M54.734,9.053C39.12,18.067,27.95,32.624,23.284,50.039c-4.667,17.415-2.271,35.606,6.743,51.22
+                    c12.023,20.823,34.441,33.759,58.508,33.759c7.599,0,15.139-1.308,22.287-3.818l30.364,52.592l21.65-12.5l-30.359-52.583
+                    c10.255-8.774,17.638-20.411,21.207-33.73c4.666-17.415,2.27-35.605-6.744-51.22C134.918,12.936,112.499,0,88.433,0
+                    C76.645,0,64.992,3.13,54.734,9.053z M125.29,46.259c5.676,9.831,7.184,21.285,4.246,32.25c-2.938,10.965-9.971,20.13-19.802,25.806
+                    c-6.462,3.731-13.793,5.703-21.199,5.703c-15.163,0-29.286-8.146-36.857-21.259c-5.676-9.831-7.184-21.284-4.245-32.25
+                    c2.938-10.965,9.971-20.13,19.802-25.807C73.696,26.972,81.027,25,88.433,25C103.597,25,117.719,33.146,125.29,46.259z" />
+            </svg>
+          </button>
+
+          <button href="#playlist" class="icons-menu" id="playlist">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 16.493C13 18.427 14.573 20 16.507 20s3.507-1.573 3.507-3.507c0-.177-.027-.347-.053-.517H20V6h2V4h-3a1 1 0 0 0-1 1v8.333a3.465 3.465 0 0 0-1.493-.346A3.51 3.51 0 0 0 13 16.493zM2 5h14v2H2z" />
+              <path d="M2 9h14v2H2zm0 4h9v2H2zm0 4h9v2H2z" />
+            </svg>
+          </button>
+
+          <button href="#favoritos" class="icons-menu" id="favoritos">
+            <svg width="24px" height="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 485.3 485.3"
+              style="enable-background: new 0 0 485.3 485.3" xml:space="preserve">
+              <g>
+                <path
+                  d="M349.6,28.95c-36.3,0-70.5,14.2-96.2,39.9l-10.6,10.6L232,68.65c-25.7-25.7-59.9-39.9-96.2-39.9
+                 c-36.2,0-70.3,14.1-96,39.8S0,128.35,0,164.65s14.2,70.4,39.9,96.1l190.5,190.5l0.4,0.4c3.3,3.3,7.7,4.9,12,4.9
+                 c4.4,0,8.8-1.7,12.1-5l190.5-190.5c25.7-25.7,39.9-59.8,39.9-96.1s-14.1-70.5-39.8-96.1C419.9,43.05,385.8,28.95,349.6,28.95z
+                  M421.2,236.75l-178.3,178.4L64.2,236.45c-19.2-19.2-29.8-44.7-29.9-71.9c0-27.1,10.5-52.6,29.7-71.8
+                 c19.2-19.1,44.7-29.7,71.7-29.7c27.2,0,52.7,10.6,72,29.9l22.9,22.9c6.4,6.4,17.8,6.4,24.3,0l22.8-22.8
+                 c19.2-19.2,44.8-29.8,71.9-29.8s52.6,10.6,71.8,29.8c19.2,19.2,29.8,44.7,29.7,71.9C451.1,192.05,440.5,217.55,421.2,236.75z" />
+              </g>
+            </svg>
+          </button>
+        </nav>
+        <div class="container-menu-aside ">
+          <div class="container-f-aside">
+            
+            <div class="box-pass-playlist-p">
+              <img src="../img/check.jpg" alt="check-icon">
+             </div>
+             <div class="block-vacio-list">
+              <h2>Parece que no tienes una Playlist creada <br> por favor, crea una !</h2>
+              <div class="block-add-vacio-music">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+                <h2>Crear Playlist</h2>
+              </div>
+            </div>
+            <div class="block-f-aside">
+              <template class="template-name-playlist">
+                <span class="title-playlist-aside"><h2> Play list test 1</h2></span>
+              </template>
+            </div>
+            <div class="template-track-hidden"></div>
+            <div class="block-f-favs">
+              <img src="../img/favs.png" alt="Favs icon add">
+            </div>
+            <div class="block-f-favs">
+              <img src="../img/favs.png" alt="Favs icon add">
+            </div>
+          </div>
+          <div class="block-m-aside">
+            <span class="add-favs">Agregar a canciones favoritas</span>
+            <span class="add-playlist">Agregar a la Playlist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../modules-js/index-js.js" type="module"></script>
+  <script src="/projects/project2/modules-js/modules/swiper-library.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+
+</html>
