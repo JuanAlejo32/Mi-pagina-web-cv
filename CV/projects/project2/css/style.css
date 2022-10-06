@@ -638,7 +638,7 @@ p {
   opacity: 0;
   /* pointer-events: none; */
   letter-spacing: 0.5rem;
-  transform: translateX(50%);
+  transform: translateX(45%);
   transition: opacity 256ms ease-out, box-shadow 256ms ease-out, transform 256ms ease-out;
 }
 
