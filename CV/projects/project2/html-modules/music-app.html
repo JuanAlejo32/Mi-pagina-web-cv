@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap'" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../css/style.css" />
-  <title>Document</title>
+  <link rel="shortcut icon" href="../img/icon-project.png">
+  <title>PROJECT 2</title>
   <!-- <script src="/projects/project2/modules-js/modules/include-html.js"></script> -->
 </head>
 
@@ -24,13 +25,13 @@
           <section class="main-menu" id="main">
             <div class="container-discover">
               <div class="container-logo-p">
-                <h1 class="logo-principal">PJ2</h1>
+                <h1 class="logo-principal logo-text"> <span>P</span><span>RO</span><span>J</span><span>ECT</span><span>2</span></h1>
               </div>
-              <div class="container-discover-title">
+              <div class="container-discover-title hidden-load">
                 <h2 class="discover-title">DESCUBRE</h2>
               </div>
 
-              <div class="container-discover-slider">
+              <div class="container-discover-slider hidden-load">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide discover-slider">
@@ -55,7 +56,7 @@
               </div>
             </div>
 
-            <div class="container-top-artists">
+            <div class="container-top-artists hidden-load">
               <div class="container-title-ta">
                 <h2 class="ta-title">ARTISTAS RECOMENDADOS</h2>
               </div>
@@ -73,7 +74,7 @@
               </div>
             </div>
 
-            <div class="container-musicals-gender">
+            <div class="container-musicals-gender hidden-load">
               <div class="container-mg-title">
                 <h2 class="mg-title">GENEROS</h2>
               </div>
@@ -360,8 +361,8 @@
               <div class="cover-tracks">
  
                 <canvas id="img-canvas" ></canvas>
-                <img src="../img/album-cover/test2.jpg" alt="" />
-                <div class="container-seek-bar">
+                <img class="hidden-load show-load" src="../img/album-cover/test2.jpg" alt="" />
+                <div class="container-seek-bar hidden-load show-load">
                   <div class="block-seek-bar">
                     <span class="indicator-seek-bar"></span>
                   </div>
@@ -421,18 +422,24 @@
                     </svg>
                 </div>
                 </button>
-                <button class="mb-repeat">
-                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384.97 384.97"
-                    style="enable-background: new 0 0 384.97 384.97" xml:space="preserve">
-                    <path id="Loop" d="M360.909,17.934H24.061C10.767,17.934,0,28.713,0,41.995V258.54c0,13.293,10.767,24.061,24.061,24.061h60.152
-               c7.711,0,12.03-5.45,12.03-12.03c0-6.581-4.09-12.187-12.03-12.187H38.738c-8.036,0-14.557-6.52-14.557-14.557V57.093
-               c0-8.036,6.52-14.557,14.557-14.557l307.627-0.373c8.036,0,14.557,6.52,14.557,14.557v187.107c0,8.036-6.52,14.557-14.557,14.557
-               H209.556l62.413-63.303c4.692-4.752,4.692-12.439,0-17.191c-4.704-4.74-12.319-4.74-17.011,0l-83.009,84.2
-               c-4.692,4.74-4.692,12.439,0,17.191c0,0,0,0,0.012,0l82.997,84.2c4.692,4.74,12.319,4.74,17.011,0
-               c4.692-4.752,4.692-12.439,0-17.179l-62.774-63.688h151.714c13.293,0,24.061-10.767,24.061-24.061V42.007
-               C384.97,28.713,374.203,17.934,360.909,17.934z" />
+                <button class="mb-repeat repeat-icon">
+                  <div class="container-repeat">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-repeat" viewBox="0 0 16 16">
+                    <path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"/>
                   </svg>
+                </div>
+                <div class="container-repeat-one">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-repeat-1" viewBox="0 0 16 16">
+                    <path d="M11 4v1.466a.25.25 0 0 0 .41.192l2.36-1.966a.25.25 0 0 0 0-.384l-2.36-1.966a.25.25 0 0 0-.41.192V3H5a5 5 0 0 0-4.48 7.223.5.5 0 0 0 .896-.446A4 4 0 0 1 5 4h6Zm4.48 1.777a.5.5 0 0 0-.896.446A4 4 0 0 1 11 12H5.001v-1.466a.25.25 0 0 0-.41-.192l-2.36 1.966a.25.25 0 0 0 0 .384l2.36 1.966a.25.25 0 0 0 .41-.192V13h6a5 5 0 0 0 4.48-7.223Z"/>
+                    <path d="M9 5.5a.5.5 0 0 0-.854-.354l-1.75 1.75a.5.5 0 1 0 .708.708L8 6.707V10.5a.5.5 0 0 0 1 0v-5Z"/>
+                  </svg>
+                </div>
+                <div class="container-shuffle">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-shuffle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                    <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/>
+                  </svg>
+                </div>
                 </button>
                 <button class="mb-add-playlist">
                   <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -484,7 +491,7 @@
             </div>
           </div>
         </aside>
-        <nav class="menu-nav-music">
+        <nav class="menu-nav-music hidden-load">
           <button href="#inicio" class="icons-menu" id="inicio">
             <svg width="24px" height="24px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
               <path

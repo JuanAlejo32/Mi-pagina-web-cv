@@ -10,6 +10,52 @@ const scrollUpDown = (elementDom,classdom,translate) =>{
 }
 
 
+export const loadEffect =() =>{
+  setTimeout(() => {
+    d.querySelector(".logo-principal").classList.add("load-effect")      
+  }, 1000);
+  setTimeout(() => {
+    d.querySelector(".logo-principal").classList.add("translate-effect")
+  }, 1500);
+
+  setTimeout(() => {
+    d.querySelector(".logo-principal").classList.remove("logo-text")
+  }, 1800);
+
+  setTimeout(() => {
+    d.querySelector(".logo-principal").classList.add("shadow-effect")
+    d.querySelector(".menu-nav-music").classList.add("show-load")
+  }, 2000);
+
+  setTimeout(() => {
+    d.querySelector(".container-discover-title").classList.add("show-load")
+    d.querySelector(".container-discover-slider").classList.add("show-load")
+  }, 2300);
+
+  setTimeout(() => {
+    d.querySelector(".container-top-artists").classList.add("show-load")
+  }, 2600);
+
+  setTimeout(() => {
+    d.querySelector(".container-musicals-gender").classList.add("show-load")
+  }, 2800);
+}
+
+export const containerUpeffect = () =>{
+
+ let size = window.matchMedia("(max-width: 768px)")
+
+
+ if (!size.matches) {
+  d.querySelector(".container-main-slide").classList.add("container-up")
+ }else{
+  d.querySelector(".container-main-slide").style.transform = "translateY(0)";
+ }
+
+
+}
+
+
 export const ChangeScreenMediaPlayer = () => {
     d.addEventListener("click", (e) => {
         e.preventDefault();
@@ -65,7 +111,8 @@ export const TransitionmusicPlayer = () =>{
 
     d.addEventListener("click",e =>{
 
-      if (e.target.matches(".container-track-music")||e.target.matches(".block-track-fav")) {
+      if (e.target.matches(".container-track-music")||e.target.matches(".block-track-fav")||e.target.matches(".block-play-fav")||e.target.matches(".block-play-fav-template")) {
+        d.querySelector(".block-seek-bar").style.width = "0"
         setTimeout(() => {
           scrollUpDown(".container-media-player","up-screen",0)
         }, 256);

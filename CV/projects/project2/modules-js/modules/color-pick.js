@@ -2,9 +2,45 @@ const d = document
 let   artistscolor
     // canvas = d.querySelector("#img-canvas");
 
+
+
+export const  changeBGgradient = async() =>{
+    window.CSS.registerProperty({
+      name: '--primary',
+      syntax: '<color>',
+      inherits: true,
+      initialValue: '#ffd924',
+    })
+    window.CSS.registerProperty({
+      name: '--secondary',
+      syntax: '<color>',
+      inherits: true,
+      initialValue: '#e5961d',
+    })
+    window.CSS.registerProperty({
+      name: '--tertiary',
+      syntax: '<color>',
+      inherits: true,
+      initialValue: '#cf4310',
+    })
+    window.CSS.paintWorklet.addModule('../modules-js/modules/bezel.js')
+  }
+    
+
+  
+const updateProperties =(colors) =>{
+  document.body.style.setProperty('--primary', `rgb(${colors[6].red}, ${colors[6].green}, ${colors[6].blue})`)
+  document.body.style.setProperty('--secondary', `rgb(${colors[1].red}, ${colors[1].green}, ${colors[1].blue})`)
+  document.body.style.setProperty('--tertiary', `rgb(${colors[8].red}, ${colors[8].green}, ${colors[8].blue})`)
+  d.documentElement.style.setProperty("--red", `${colors[0].red}`);
+  d.documentElement.style.setProperty("--green", `${colors[1].green}`);
+  d.documentElement.style.setProperty("--blue", `${colors[2].blue}`);
+}
+  
+
 export const colorBGchange =(e,canvas,srcImg) => {
   
-    const  ctx = canvas.getContext("2d"),
+    const  ctx = canvas.getContext("2d",{willReadFrequently:true}),
     
     image = new Image();
     image.setAttribute("crossOrigin", "anonymous");
@@ -16,36 +52,28 @@ export const colorBGchange =(e,canvas,srcImg) => {
       ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
       const colors = getColorPalette(ctx,canvas);
 
-      if (dom === true) {
-        console.log("hola")
-      }
+      updateProperties(colors)
 
-      d.documentElement.style.setProperty(
-        "--primary",
-        `rgb(${colors[6].red}, ${colors[6].green}, ${colors[6].blue})`
-      );
-      d.documentElement.style.setProperty(
-        "--secondary",
-        `rgb(${colors[1].red}, ${colors[1].green}, ${colors[1].blue})`
-      );
-      d.documentElement.style.setProperty(
-        "--tertiary",
-        `rgb(${colors[8].red}, ${colors[8].green}, ${colors[8].blue})`
-      );
+      // d.documentElement.style.setProperty("--primary",`rgb(${colors[6].red}, ${colors[6].green}, ${colors[6].blue})`
+      // );
+      // d.documentElement.style.setProperty("--secondary",`rgb(${colors[1].red}, ${colors[1].green}, ${colors[1].blue})`
+      // );
+      // d.documentElement.style.setProperty( "--tertiary",`rgb(${colors[8].red}, ${colors[8].green}, ${colors[8].blue})`
+      // );
 
-      d.documentElement.style.setProperty("--red", `${colors[0].red}`);
-      d.documentElement.style.setProperty("--green", `${colors[1].green}`);
-      d.documentElement.style.setProperty("--blue", `${colors[2].blue}`);
+      // d.documentElement.style.setProperty("--red", `${colors[0].red}`);
+      // d.documentElement.style.setProperty("--green", `${colors[1].green}`);
+      // d.documentElement.style.setProperty("--blue", `${colors[2].blue}`);
 
       
-    const getTextColor = () => {
-        let rgba = [colors[0].red, colors[1].green, colors[2].blue];
-        if (rgba[0] * 0.299 + rgba[1] * 0.587 + rgba[2] * 0.114 > 186) {
-        return console.log("negro");
-        } else {
-        return console.log("blanco");
-        }
-    };
+    // const getTextColor = () => {
+    //     let rgba = [colors[0].red, colors[1].green, colors[2].blue];
+    //     if (rgba[0] * 0.299 + rgba[1] * 0.587 + rgba[2] * 0.114 > 186) {
+    //     return console.log("negro");
+    //     } else {
+    //     return console.log("blanco");
+    //     }
+    // };
     
     // getTextColor();
 

@@ -26,7 +26,53 @@ const $templateCardartists = d.querySelector(".template-card-artists").content,
       $containerCardartists = d .querySelector(".block-top-artists"),
       $containerPlaylistartists = d.querySelector(".block-music-playlist")
 
+const $btnFavmark = d.querySelector(".mb-favorite"),
+      favcheck = d.querySelector(".block-favorite-full"),
+      favuncheck = d.querySelector(".block-favorite-stroke")
 
+const $repeat =  d.querySelector(".container-repeat"),
+      $repeatOne = d.querySelector(".container-repeat-one"),
+      $shuffle = d.querySelector(".container-shuffle"),
+      $mbbackward= d.querySelector(".mb-backward"),
+      $mbforward = d.querySelector(".mb-forward"),
+      $mbrepeat = d.querySelector(".mb-repeat"),
+      $minibackward = d.querySelector(".mini-backward"),
+      $miniforward = d.querySelector(".mini-forward")
+
+
+let bdPlaylist = [],
+    nexttrack = 2,
+    indexf = 0,
+    bdplayerlist =[]
+
+export const bdPlaylistload = async (elementdetecte,e) =>{
+  
+  if (elementdetecte==="playlistselect") {
+    bdPlaylist = []
+    bdPlaylist = JSON.parse(localStorage.getItem("playlistselect"))
+  }
+
+  if (elementdetecte==="playlist") {
+    bdPlaylist = []
+    let bdPlay = JSON.parse(localStorage.getItem("playlist")),  
+    $playindex  =  e.target.querySelector(".track-playlist-title"),
+    finalvalue =  $playindex.innerText  
+
+    const validaSiexiste = (element) => element.nameplaylist.toLowerCase() === finalvalue.toLowerCase()
+    let indexplaylist = bdPlay.findIndex(validaSiexiste)
+
+    for (let index = 0; index < bdPlay[indexplaylist].trackinfo.length; index++) {
+      const element = bdPlay[indexplaylist].trackinfo[index];
+      bdPlaylist.push(element)
+    }
+  }
+
+  if (elementdetecte==="playlistfav") {
+    bdPlaylist = []
+    bdPlaylist = JSON.parse(localStorage.getItem("favsmusic"))  
+  }
+
+}
 
 export const templateNameimgartists =  async(namesec,background)=>{
 
@@ -108,31 +154,206 @@ export const callApiDeezer = async (searcht) => {
   }
 };
 
-export const musicPlayerLoader = async (e) =>{
+export const Controls= (cases) =>{
+
+  switch (cases) {
+    case true:
+      d.querySelector(".mb-repeat").classList.add("repeat-icon")
+      $repeat.style.display = "block"
+      $shuffle.style.display = "none"
+      $repeatOne.style.display = "none"
+
+      $mbbackward.style.pointerEvents = "auto";
+      $mbforward.style.pointerEvents = "auto";
+      $mbbackward.style.opacity = "1";
+      $mbforward.style.opacity = "1";
+
+      $minibackward.style.pointerEvents = "auto";
+      $miniforward.style.pointerEvents = "auto";
+      $minibackward.style.opacity = "1";
+      $miniforward.style.opacity = "1";
+
+
+      $mbrepeat.style.pointerEvents = "auto"
+      $mbrepeat.style.opacity = "1";
+
         
-        $miniImg.src = e.target.querySelector('img').dataset.img_cover_big
-        $miniTitletrack.innerText = e.target.querySelector('.search-track-title').dataset.title
-        $miniTitleartist.innerText = e.target.querySelector('.block-infotrack').dataset.artist 
-        
-        $trackSrc.src = e.target.querySelector('.block-infotrack').dataset.preview 
-        $imgTrack.src = e.target.querySelector('img').dataset.img_cover_big
-        $titleAlbum.innerText = e.target.querySelector('.search-artist-title').dataset.title_album
-        $titleTrack.innerText = e.target.querySelector('.search-track-title').dataset.title
-        $titleArtist.innerText = e.target.querySelector('.block-infotrack').dataset.artist
-        $titleTrack.dataset.id_track = e.target.querySelector('.block-infotrack').dataset.id_track
+      break; 
+    case false:
+      d.querySelector(".mb-repeat").classList.remove("repeat-icon")
+      d.querySelector(".mb-repeat").classList.remove("repeat-one-icon")
+      d.querySelector(".mb-repeat").classList.remove("shuffle-icon")     
+      $repeat.style.display = "block"
+      $shuffle.style.display = "none"
+      $repeatOne.style.display = "none"
 
-        for (let index = 0; index < $playIcon.length; index++) {
-            const playelement = $playIcon[index],
-                  pauselement = $pauseIcon[index],
-                  statelement = $statePlay[index]
+      $mbbackward.style.pointerEvents = "none";
+      $mbforward.style.pointerEvents = "none";
+      $mbbackward.style.opacity = "0.2";
+      $mbforward.style.opacity = "0.2";
 
-                  playelement.style.display = "block"
-                  pauselement.style.display = "none"
-                  statelement.classList.remove("pause")            
-        }
+      $minibackward.style.pointerEvents = "none";
+      $miniforward.style.pointerEvents = "none";
+      $minibackward.style.opacity = "0.2";
+      $miniforward.style.opacity = "0.2";
 
-    
+      $mbrepeat.style.pointerEvents = "none"
+      $mbrepeat.style.opacity = "0.2";
+
+
+    break;
+  }
+
+
 }
+
+const templateMusicPlayer = (...rest)=>{
+
+    $miniImg.src = rest[0]
+    $miniTitletrack.innerText = rest[1]
+    $miniTitleartist.innerText = rest[2]
+    
+    $trackSrc.src = rest[3]
+    $imgTrack.src = rest[0]
+    $titleAlbum.innerText =rest[4]
+    $titleTrack.innerText = rest[1]
+    $titleArtist.innerText = rest[2]
+    $titleTrack.dataset.id_track = rest[5]
+    
+    for (let index = 0; index < $playIcon.length; index++) {
+      const playelement = $playIcon[index],
+            pauselement = $pauseIcon[index],
+            statelement = $statePlay[index]
+
+            playelement.style.display = "block"
+            pauselement.style.display = "none"
+            statelement.classList.remove("pause")            
+  }
+  
+}
+
+export const musicPlayerLoader = async (e) =>{
+
+      const  mimgsrc = e.target.querySelector('img').dataset.img_cover_big,
+             mtitletrack = e.target.querySelector('.search-track-title').dataset.title,
+             martistsname = e.target.querySelector('.block-infotrack').dataset.artist, 
+             mpreviuwurl = e.target.querySelector('.block-infotrack').dataset.preview,
+             mtitlealbum = e.target.querySelector('.search-artist-title').dataset.title_album,
+             midtrack = e.target.querySelector('.block-infotrack').dataset.id_track  
+
+        templateMusicPlayer(mimgsrc,mtitletrack,martistsname,mpreviuwurl,mtitlealbum,midtrack)
+           
+}
+
+export const resetIndextrack = () =>{
+  nexttrack = 0
+  indexf= bdPlaylist.length
+}
+
+export const forward = () =>{
+
+  if ( nexttrack < indexf) {
+    nexttrack++
+  }else{
+    nexttrack = 1
+  }
+ 
+}
+
+export const backward = () =>{
+
+  if ( nexttrack <= 1) {
+    nexttrack = indexf 
+  }else{
+     nexttrack--
+  }
+
+}
+
+export const randomForward = () =>{
+  nexttrack = Math.floor((Math.random()* bdPlaylist.length)+1)
+
+  // console.log(bdPlaylist.length)
+}
+
+
+export const controlCheckPlaylist = (e, type) => {
+  let existe = 0;
+
+  const Testplaylist = bdplayerlist;
+
+  // console.log(Testplaylist);
+
+  switch (type) {
+    case "container":
+
+      const $containerid = e.target.querySelector(".block-infotrack").dataset.id_track;
+    
+      const validaSiexistecontain = (element) => parseInt(element.idtrack) === parseInt($containerid);
+  
+      existe = Testplaylist.findIndex(validaSiexistecontain);
+
+      nexttrack = existe+1
+  
+      if (existe !== -1) {
+        Controls(true)
+      }else{
+        Controls(false)
+      }
+      
+      break;
+  
+    default:
+      const $blockid = e.target.dataset.id_track;
+   
+      const validaSiexisteblock = (element) => parseInt(element.idtrack) === parseInt($blockid);
+  
+      existe = Testplaylist.findIndex(validaSiexisteblock);
+
+      nexttrack = existe+1
+  
+      if (existe !== -1) {
+        Controls(true)
+      }else{
+        Controls(false)
+      }
+
+      break;
+  }
+
+};
+
+
+export const musicPlayerLoaderList = async () =>{
+
+  const bdstorage = JSON.parse(localStorage.getItem("favsmusic"))
+
+  bdplayerlist = bdPlaylist
+
+  const validaSiexiste = (element) => parseInt(element.idtrack) === parseInt(bdPlaylist[nexttrack -1].idtrack);
+
+   let existe = bdstorage.findIndex(validaSiexiste)
+
+
+   if (existe !== -1) {
+      $btnFavmark.classList.add("fav-track")
+      favcheck.style.display = "block"
+      favuncheck.style.display = "none"
+   }else{
+        $btnFavmark.classList.remove("fav-track")
+        favuncheck.style.display = "block"
+        favcheck.style.display = "none"
+   }
+
+
+  if (bdplayerlist.length>1) {
+
+    templateMusicPlayer(bdplayerlist[nexttrack-1].imgcover,bdPlaylist[nexttrack-1].titletrack,bdPlaylist[nexttrack-1].nameartists,bdPlaylist[nexttrack-1].previewurl,bdPlaylist[nexttrack-1].titlealbum,bdPlaylist[nexttrack-1].idtrack)  
+  }
+     
+}
+
+
 
 const artistaAleatorio = () =>{
 
@@ -190,7 +411,7 @@ export const loadArtiststrack  = async(idArtists) =>{
             
             templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
             LoadtrackselectStorage(bdresponse)
-
+            bdPlaylistload("playlistselect")  
             $loaderArtists.style.display = "none"}
 
        
@@ -215,16 +436,10 @@ export const loadPlaylists  = async(idplay) =>{
     fetch(`https://deezerdevs-deezer.p.rapidapi.com/playlist/${idplay}`, options)
         .then(response => response.json(), $loaderArtists.style.display = "block")
         .then(response =>{ const bdresponse = response.tracks.data 
-                                    // console.log(test[0].preview)
-        
-            // for (let index = 0; index < 50; index++) {
-            //     const element = response.tracks.data[index];
-            //     console.log(element)  
-            // }}
             
             templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
             LoadtrackselectStorage(bdresponse)
-
+            bdPlaylistload("playlistselect")  
             $loaderArtists.style.display = "none"}
        
             )

@@ -14,18 +14,28 @@ const   $trackSrc = d.querySelector('#audio-player'),
         $addPlaylistMusic = d.querySelector(".add-playlist"),
         $fragment = d.createDocumentFragment()
 
-const $containerPlaylist = d.querySelector(".container-playlist-list"),
-      $containerfAside = d.querySelector(".block-f-aside"),
+const  $containerPlaylist = d.querySelector(".container-playlist-list"),
+       $containerfAside = d.querySelector(".block-f-aside"),
        $templatePlaylist = d.querySelector(".template-select-playlist").content,
        $templateNameplay = d.querySelector(".template-name-playlist").content,
        $titlePlaylist =  $templateNameplay.querySelector(".title-playlist-aside"),
        $playlistName = $templatePlaylist.querySelector(".track-playlist-title")
 
-const  $templateTracklist = d.querySelector(".block-track-music-list").content,
+const   $templateTracklist = d.querySelector(".block-track-music-list").content,
         $containerblockPlaylist = d.querySelector(".block-music-playlist"),
         $blockfaside = d.querySelector(".template-track-hidden")
 
+        
+const   $miniImg = d.querySelector(".block-img-mini-player img"),
+        $miniTitletrack = d.querySelector(".title-track-mini h2"),
+        $miniTitleartist = d.querySelector(".title-track-mini span"),
+        $playIcon = d.querySelectorAll(".mb-play .svg-play"),
+        $pauseIcon = d.querySelectorAll(".mb-play .svg-pause"),
+        $statePlay = d.querySelectorAll(".mb-play")
+
 let    $tplayselect = d.querySelector(".d-title-playlist")
+
+
 
 
 export const fadeEffect = (domElement,classlement) =>{
@@ -78,16 +88,6 @@ export const addtrackFavtoplay = (e) =>{
 export const addtrackPlayertoplay = (e) =>{
 
     $blockfaside.innerHTML = ""
-
-    console.log(e.target.parentNode.parentNode.parentNode.querySelector('#audio-player').src,
-                e.target.parentNode.parentNode.parentNode.querySelector(".cover-tracks img ").src,
-                e.target.parentNode.parentNode.parentNode.querySelector(".title-album").innerText,
-                e.target.parentNode.parentNode.parentNode.querySelector(".title-track").innerText,
-                e.target.parentNode.parentNode.parentNode.querySelector(".title-track").dataset.id_track,
-                e.target.parentNode.parentNode.parentNode.querySelector(".title-artist").innerText,
-                e.target.parentNode.parentNode.parentNode.querySelector(".title-track").innerText)
-
-    // console.log(bdstorage[createTrack])
 
     $templateTracklist.querySelector('img').setAttribute("src", e.target.parentNode.parentNode.parentNode.querySelector(".cover-tracks img ").src);
     $templateTracklist.querySelector('img').dataset.img_cover_medium = e.target.parentNode.parentNode.parentNode.querySelector(".cover-tracks img ").src
@@ -403,15 +403,6 @@ export const trackPlayerload = async (e) => {
     const bdstorage =  JSON.parse(localStorage.getItem("favsmusic")),
           $trackId = e.target.dataset.id_track
     
-    const $miniImg = d.querySelector(".block-img-mini-player img"),
-          $miniTitletrack = d.querySelector(".title-track-mini h2"),
-          $miniTitleartist = d.querySelector(".title-track-mini span"),
-          $trackSrc = d.querySelector('#audio-player'),
-          $miniBGtrack = d.querySelector(".block-img-mini-player"),
-          $playIcon = d.querySelectorAll(".mb-play .svg-play"),
-          $pauseIcon = d.querySelectorAll(".mb-play .svg-pause"),
-          $statePlay = d.querySelectorAll(".mb-play")
-
         //   console.log($trackId)
 
     const validaSiexiste = (element) => element.idtrack === $trackId;
@@ -683,17 +674,3 @@ export const localStorageLoad  = async () =>{
 }
 
 
-
-
-// export const LocalPlayliststorage = () =>{
-
-//    const test = [{"url":"https://cdns-preview-1.dzcdn.net/stream/c-13039fed16a173733f227b0bec631034-12.mp3", "title":"Lose Yourself (From 8 Mile Soundtrack)","cover":"https://e-cdns-images.dzcdn.net/images/artist/19cc38f9d69b352f718782e7a22f9c32/250x250-000000-80-0-0.jpg","artist":"Eminem"},
-//                  {"url":"https://cdns-preview-1.dzcdn.net/stream/c-13039fed16a173733f227b0bec631034-12.mp3", "title":"Lose Yourself (From 8 Mile Soundtrack)","cover":"https://e-cdns-images.dzcdn.net/images/artist/19cc38f9d69b352f718782e7a22f9c32/250x250-000000-80-0-0.jpg","artist":"Eminem"} ];
-
-//           test.push({"url":"test","artist":"test artis"})       
-
-//   const  testJsonstr = JSON.stringify(test),
-//           testJson = JSON.parse(testJsonstr)
-
-            
-// }
