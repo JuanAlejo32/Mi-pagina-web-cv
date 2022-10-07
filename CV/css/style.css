@@ -692,24 +692,27 @@ svg {
 
 .proyecto {
   padding: 0.4rem;
-  flex: 0 0 480px;
+  flex: 0 0 380px;
 }
 
 .proyecto img {
   object-fit: cover;
+  object-position: top;
   border-radius: 3px;
-  height: 340px;
+  height: 550px;
+  width: 100%;
 }
 
 .mascara {
   position: relative;
-  max-height: 340px;
+  max-height: 550px;
 }
 
 .proyecto-info {
   display: flex;
   flex-direction: column;
   position: absolute;
+  justify-content: center;
   top: 0;
   left: 0px;
   width: 100%;
@@ -1083,8 +1086,9 @@ footer p {
     width: 100%;
   }
 
+
   .proyecto {
-    flex: 1 1 100%;
+    flex: 1 1 100% !important;
   }
 
   /************Mis habilidades****************/
@@ -1225,6 +1229,23 @@ footer p {
     width: 1.5vw;
     height: 1.5vw;
   }
+
+  /***********************************************************/
+
+  .proyecto{
+    flex: 0 0 280px;
+  }
+
+  .proyecto img,.mascara{
+    height: 500px;
+  }
+
+  .proyecto .position-img-1{
+    /* object-fit: contain; */
+    object-position: center;
+  }
+  
+
 
 }
 

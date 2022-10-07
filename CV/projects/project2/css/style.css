@@ -638,7 +638,7 @@ p {
   opacity: 0;
   /* pointer-events: none; */
   letter-spacing: 0.5rem;
-  transform: translateX(50%);
+  transform: translateX(45%);
   transition: opacity 256ms ease-out, box-shadow 256ms ease-out, transform 256ms ease-out;
 }
 
@@ -1008,7 +1008,7 @@ p {
   opacity: 1;
   transform: translateY(100%);
   border-radius: 12px;
-  transition: --primary 0.5s, --secondary 0.5s, --tertiary 0.5s;  
+  transition: --primary 0.5s, --secondary 0.5s, --tertiary 0.5s,opacity 256ms ease-in;  
 }
 
 .media-player{
@@ -1926,7 +1926,8 @@ label:before {
  .box-error-playlist-name,
  .box-error-playlist-number,
  .box-playlist-check,
- .box-pass-playlist-p{
+ .box-pass-playlist-p,
+ .block-check-fav{
   height: 120px;
   width: 250px;
   display: flex;
@@ -1936,6 +1937,17 @@ label:before {
   background-color: var(--main-color);
   border-radius: 12px;
  }
+
+ .block-check-fav{
+  display: none;
+ }
+
+ .block-check-fav h2{
+  font-family: var(--sub-text-project);
+  font-size: 1rem;
+  text-align: center;
+ }
+
 
  .box-playlist-check{
   display: none;

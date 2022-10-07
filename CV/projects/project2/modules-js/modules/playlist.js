@@ -219,6 +219,8 @@ export const loadPlaylistname = () => {
 const popUpmodal = () =>{
     d.querySelector(".box-playlist").style.display = "none";
     d.querySelector(".modal-add-playlist").style.display = "flex";
+    d.querySelector(".container-media-player").style.opacity= 0
+    d.querySelector(".container-media-player").style.pointerEvents = "none"
     setTimeout(() => {
     d.querySelector(".modal-add-playlist").style.transform = "translateY(0%)" 
     d.querySelector(".menu-nav-music").style.opacity = 0
@@ -230,6 +232,8 @@ const yesOrno = () =>{
     d.querySelector(".modal-add-playlist").style.transform = "translateY(100%)"  
     d.querySelector(".menu-nav-music").style.opacity = 1
     d.querySelector(".menu-nav-music").style.pointerEvents = "auto";
+    d.querySelector(".container-media-player").style.opacity= 1
+    d.querySelector(".container-media-player").style.pointerEvents = "auto"
 
 
     setTimeout(() => {
@@ -248,13 +252,10 @@ export const deletePlaylist =(e) =>{
     let bdplaylist =  JSON.parse(localStorage.getItem("playlist")),
         $playlistDelete = d.querySelector("#c-yes").dataset.name
     const validaSiexiste = (element) => element.nameplaylist.toLowerCase() === $playlistDelete .toLowerCase();
-
     // console.log($playlistDelete)
-
     let deleteplaylist = bdplaylist.findIndex(validaSiexiste)
-
     bdplaylist.splice(deleteplaylist,1)
-   localStorage.setItem("playlist", JSON.stringify(bdplaylist)) 
+    localStorage.setItem("playlist", JSON.stringify(bdplaylist)) 
 
 }  
 
@@ -368,6 +369,8 @@ export const createPlaylist = () =>{
                     d.querySelector(".modal-add-playlist").style.transform = "translateY(100%)"  
                     d.querySelector(".menu-nav-music").style.opacity = 1
                     d.querySelector(".menu-nav-music").style.pointerEvents = "auto";
+                    d.querySelector(".container-media-player").style.opacity= 1
+                    d.querySelector(".container-media-player").style.pointerEvents = "auto" 
                     playlistList() 
                 }, 2100);
             }
@@ -517,6 +520,8 @@ export const modalPlaylist = () =>{
             const $playlist = d.getElementById("res-playlist").value = ""
             d.querySelector(".modal-add-playlist").style.display = "flex";
             d.querySelector(".box-playlist").style.display="flex"
+            d.querySelector(".container-media-player").style.opacity= 0
+            d.querySelector(".container-media-player").style.pointerEvents = "none"
             setTimeout(() => {
             d.querySelector(".modal-add-playlist").style.transform = "translateY(0%)" 
             d.querySelector(".menu-nav-music").style.opacity = 0
@@ -530,8 +535,11 @@ export const modalPlaylist = () =>{
             d.querySelector(".modal-add-playlist").style.transform = "translateY(100%)"  
             d.querySelector(".menu-nav-music").style.opacity = 1
             d.querySelector(".menu-nav-music").style.pointerEvents = "auto";
+            
 
             setTimeout(() => {
+                d.querySelector(".container-media-player").style.opacity= 1
+                d.querySelector(".container-media-player").style.pointerEvents = "auto"
                 d.querySelector(".modal-add-playlist").style.display = "none";
             }, 350);          
         }
@@ -619,7 +627,10 @@ const validaSiexiste = (element) => element.idtrack === trackInfo.idtrack;
         localStorage.setItem("favsmusic",JSON.stringify(bdstorage))  
         $addFavs.classList.add("reveal-favs-icon")
     } else {
-        console.log("Lo sentimos, ya se encuentra")
+        d.querySelector(".block-check-fav").style.display ="flex"
+        setTimeout(() => {
+            d.querySelector(".block-check-fav").style.display ="none"
+        }, 1500);
     }     
 }
 
