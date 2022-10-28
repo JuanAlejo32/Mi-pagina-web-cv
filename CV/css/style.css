@@ -968,6 +968,13 @@ footer p {
 
 /********Media query*************/
 
+@media screen and (max-width: 550px) {
+
+  .logo-section h2{
+    bottom: 1rem !important;
+  }
+}
+
 @media screen and (max-width: 768px) {
   /******************Doble linea***********************/
   .doble-linea::after {
@@ -1019,6 +1026,10 @@ footer p {
 
   .container-logo h2 {
     font-size: 7vw;
+  }
+
+  .logo-section h2{
+    bottom: 1.6rem;
   }
 
   .container-social svg {
