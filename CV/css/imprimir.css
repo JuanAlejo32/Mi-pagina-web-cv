@@ -40,6 +40,7 @@
   margin-right: 1rem;
   background-color: #E5E5E5;
   border-radius: 0 0 1rem 1rem;
+  width: 280px;
 
 }
 
@@ -91,7 +92,12 @@
   padding-bottom: 1rem;
 }
 
-.container-miskills-title h2{
+.container-studies-title{
+  grid-area: estudies-title;
+  padding-bottom: 1rem;
+}
+
+.title-skills-studies{
   font-family: var(--font-text);
   border-bottom: thin solid var(--black2-bg);
   font-size: 1.5rem;
@@ -99,19 +105,18 @@
 
 .container-studie{
   grid-area: studies;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 500px;
+  height: 400px;
 }
 
 .container-studie h2{
   font-size: 0.8rem;
   letter-spacing: 2px;
+  padding-bottom: 0.5rem;
 }
 
 .container-studie li{
   font-size: 0.8rem;
+  padding-bottom: 1.5rem;
 }
 
 .container-studie h2,
@@ -121,14 +126,18 @@
 
 .container-skill{
   grid-area: skill;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-.container-skill h2{
+.container-skill li{
   padding: 1rem;
   font-family: var(--font-text);
   font-size: 1rem;
   letter-spacing: 2px;
-  border-left: thin solid #000000;
 }
 
 .container-info-print{
@@ -137,7 +146,9 @@
                        "personaldata minfo minfo" 
                        "personaldata smiskills miskills"
                        "personaldata miskills-title miskills-title"
-                       "personaldata studies skill";
+                       "personaldata skill skill"
+                       "personaldata estudies-title estudies-title"
+                       "personaldata studies studies";
   grid-template-columns: auto auto 200px;
 }
 
