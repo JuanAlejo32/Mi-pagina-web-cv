@@ -1,0 +1,274 @@
+:root {
+    --font-logo: "Righteous", sans-serif;
+    --font-text: "Work Sans", sans-serif;
+  }
+  
+  html {
+      box-sizing: border-box;
+      font-family: var(--font);
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+    
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text-color);
+    }
+    
+    /* a{
+          color: var(--link-color);
+          transition: all 0.5s ease-out;
+      } */
+    
+    /* a:hover{
+          opacity: 0.75;
+      } */
+    
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+    h5 {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+    
+    h6 {
+      margin: 0;
+      font-size: 0.7rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    p {
+      line-height: 1.6;
+    }
+    /**********************************************************************/
+
+    /*Container slider**/
+    .sliders{
+      position: relative;
+      width: 200%;
+      display: flex;
+      flex-direction: row;
+      transition: transform 256ms ease-in-out;
+    }
+
+    .container-slider{
+      overflow: hidden;
+    }
+
+    .slider-width{
+      width: 100%;
+    }
+
+    .slider-absolute{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      transform: translateY(100%);
+      transition: transform 256ms ease-in-out;
+      width: 100vw;
+    }
+  
+    /*sweetAlert 2 text*/
+  
+    .swal2-title{
+      font-family: var(--font-text);
+    } 
+  
+    .full-lg-screen {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0 !important;
+    }
+  
+    .full-background{
+      position: relative;
+      background-image: url(/project3JS/img/bg-main.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 100%;
+    }
+  
+    .title-project{
+      font-family: var(--font-text);
+    }
+  
+    .title-main-p{
+      font-family: var(--font-text);
+    }
+  
+    .title-input{
+      font-family: var(--font-text);
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+    }
+  
+    .btn-sesion{
+      height: 60px;
+      font-family: var(--font-text); 
+    }
+  
+    .container-login-section{
+      height: 100vh;
+      background-color: #fff;
+    }
+    
+    /*Effects*/
+  
+    .login-show{
+      animation-name: loginshow;
+      animation-duration: 536ms;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes loginshow {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .container-off-bg{
+      position: relative;
+      min-height: 100vh; 
+      padding: 0 !important;
+    }
+  
+    .wave{
+      background-image: url(/project3JS/img/wave.svg);
+      transform: rotate(90deg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      width: 100vh; 
+    }
+  
+  
+  /* REGISTER PAG */
+  
+  .container-form-register{
+    background-color: #fff;
+    padding: 2rem;
+  }
+  
+  /*lOGIN USER*/
+  
+  .container-user-display{
+    height: 30vh;
+  }
+  
+  /*LOGIN ACCES*/
+  
+  th{
+   color: #fff; 
+  }
+  
+  /*TABLE LIST USER*/
+  
+  .table-list-user{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  
+  /*UPDATE SECTION*/
+  
+  .container-table-update{
+    height: 80vh;
+  }
+  
+  #rol-edit{
+    width: auto;
+  }
+
+  .td-user-update,.td-user{
+    padding-top: 0.8rem !important;
+  }
+
+  /*********Rol "Acces"************/
+
+  .adm-section,.client-section{
+    display: none;
+  }
+
+  /*****************SECTION ADM AND CLIENT********************/
+
+  .container-table-user{
+    position: relative;
+  }
+
+  .table-update,.table-user{
+    position: relative;
+    opacity: 0;
+    transition: all 206ms ease-in-out;
+  }
+
+  .table-update{
+    display: none;
+  }
+
+
+  .table-show{
+    opacity: 1;
+  }
+
+
+  /*Media querys*/
+  
+  @media screen and (max-width: 992px) {
+    .container-off-bg{
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 579px) {
+  
+    .title-input,#update-name{
+      font-size: 0.8rem;
+    }
+
+    .btn{
+      margin-bottom: 0.5rem;
+    }
+  
+    .title-project{
+      font-size: 1rem;
+    }
+  
+    .title-main-p{
+      
+    }
+  }
