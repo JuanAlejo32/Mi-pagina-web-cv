@@ -170,7 +170,7 @@
     }
   
     .wave{
-      background-image: url(/project3JS/img/wave.svg);
+      background-image: url(../img/wave.svg);
       transform: rotate(90deg);
       background-position: bottom;
       background-repeat: no-repeat;
