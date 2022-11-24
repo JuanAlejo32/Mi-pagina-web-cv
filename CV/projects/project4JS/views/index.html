@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,900&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/pj4.png" type="image/x-icon">
+    <title>Proyecto 4 Node.JS</title>
+</head>
+<body>
+    <div class="container-slider">
+        <div class="container-oy">
+            <section class="container-login full-lg-screen row position-relative">
+    
+                <div class="section-logo col-lg-6 p-0">
+                    <div class="container-logo p-0 ">
+                        <video class="video-section" autoplay muted loop src="../img/bg1.mp4"></video>
+                        <div class="container-opacity position-absolute opacity-50 p-0">
+                        </div>
+                        <div
+                            class="container-project position-absolute d-flex row justify-content-center align-items-center">
+                            <div
+                                class="project-section col-lg-5 col-md-4 col-6 rounded-4 d-flex flex-column justify-content-around">
+                                <h1 class="title-project text-center p-lg-3 p-4">Proyecto 4 Login con Node.js, JWT y MySQL
+                                </h1>
+                                <a class="btn btn-dark col-7 title-input-t mx-auto mb-2" href="">Github del Proyecto</a>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="section-login col-lg-6 p-0 position-relative">
+    
+                    <div class="d-flex justify-content-center align-items-lg-center align-items-end pt-lg-0 pt-4 h-100">
+                        <form class="section-log login-show col-lg-8 form-template position-relative rounded-4 p-lg-5 p-3"
+                            action="/login" id="formLogin" method="POST">
+    
+                            <div class="container-icon-login w-100 text-center">
+                                <img class="mb-lg-5 mb-2" src="../img/login.png" alt="Login-Icon">
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control mb-3" id="user" name="user" placeholder="User">
+                                <label class="title-input">Usuario</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control mb-4" id="password" name="password"
+                                    placeholder="Password">
+                                <label class="title-input">Contraseña</label>
+                            </div>
+                            <button class="btn btn-primary title-input col-12 p-2" type="submit" id="btn-login">Ingresar</button>
+                            <div class="register-section  mt-2 w-100">
+                                <h5 class="text-center title-input ">Si no tienes cuenta te puedes <a class="btn-register"
+                                        href="/register">Registrar</a></h5>
+                            </div>
+    
+                        </form>
+    
+                        <form class="section-register col-lg-8 form-template position-relative rounded-4 p-lg-5 p-3"
+                            action="/register" id="formRegister" method="POST">
+    
+                            <div class="container-icon-login w-100 text-center">
+                                <img class="mb-lg-5 mb-2" src="../img/login.png" alt="Login-Icon">
+                            </div>
+                            <div class="form-floating ">
+                                <input type="text" class="form-control mb-3" id="reg-name" name="name" placeholder="name">
+                                <label class="title-input">Nombre Completo</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" class="form-control mb-3" id="reg-user" name="user" placeholder="user">
+                                <label class="title-input">Usuario</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control mb-4" id="reg-pass" name="password"
+                                    placeholder="password">
+                                <label class="title-input">Contraseña</label>
+                            </div>
+                            <!-- <div class="form-floating">
+                                <input type="password" class="form-control mb-4" id="password" name="password" placeholder="password">
+                                <label class="title-input">Repetir Contraseña</label>
+                            </div> -->
+                            <div class="d-flex justify-content-around">
+                                <button id="btn-create-register" class="btn btn-primary title-input col-5 p-2 title-register" type="submit">Registrarse</button>
+                                <a class="btn-register btn btn-light col-5 p-2 title-input" href="/login">Cancelar</a>
+                            </div>
+    
+                        </form>
+                    </div>
+    
+                </div>
+            </section>
+    
+            <section class="container-adm-panel full-lg-screen">
+                <nav class="container-nav w-100 px-3 d-flex justify-content-between align-items-center rounded-bottom">
+                    <div class="container-title-nav">
+                        <h2 class="title-nav">Login Node.Js, JWT y MySQL</h2>
+                    </div>
+    
+                    <div>
+    
+                        <a class="btn btn-outline-dark title-input" href="https://juanalejo32.github.io/Mi-pagina-web-cv/CV/projects/project4JS/views/index.html">Desconectar</a>
+    
+                    </div>
+                </nav>
+    
+                <section class="container-client ">
+                    <div class="section-client d-flex justify-content-center align-items-center">
+    
+                        <h1 class="title-input text-center title-user-login">Bienvenido usuario</h1>
+    
+                    </div>
+                    <div class="section-table d-flex justify-content-center align-items-center">
+                        <div class="col-8">
+                            <table class="table-list-user table-show table table-striped rounded-4">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Usuario</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+                                    <template class="template-user">
+                
+                                        <tr class="text-center">
+                                          <td class=" title-input td-id"></td>
+                                          <td class=" title-input td-user"></td>
+                                          <td class=" title-input td-name"></td>
+                                          <td>
+                                            <a class="btn btn-outline-info title-input a-edit">Editar</a>
+                                            <a class="btn btn-outline-danger title-input a-delete">Borrar</a>
+                                          </td>
+                                        </tr>
+                              
+                                      </template>
+    
+    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="section-table d-flex justify-content-center align-items-center">
+                        <div class="col-8">
+                        <table class="table-list-update table table-striped rounded-4">
+                            <thead>
+                              <tr class="text-center">
+                                <th scope="col">ID</th>
+                                <th scope="col">Usuario</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Acciones</th>
+                              </tr>
+                            </thead>
+                            <tbody>  
+                                <form class="update-user">                           
+                                    <tr class="text-center">
+                                        <td class="td-id-update title-input pt-3"></td>
+                                        <td class="td-user-update title-input pt-3"></td>
+                                        <td class="td-user-name title-input" ><input type="text" class="form-control " name="name" value="" id="update-name"></td>
+                                        <td class="">
+                                            <a  class=" btn btn btn-outline-info title-input mb-1 a-save">Guardar</a>
+                                            <a  class=" btn btn-outline-danger title-input mb-1 a-cancel">Cancelar</a>
+                                        </td>
+                                    </tr>  
+                                </form>                            
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../script-modules/index-script.js" type="module"></script>
+</body>
+</html>

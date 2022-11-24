@@ -1,0 +1,293 @@
+:root {
+    --font-logo: 'Asap', sans-serif;
+    --font-text: 'Roboto', sans-serif;
+  }
+  
+  html {
+      box-sizing: border-box;
+      font-family: var(--font);
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    
+    *,
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+    
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--text-color);
+    }
+    
+    /* a{
+          color: var(--link-color);
+          transition: all 0.5s ease-out;
+      } */
+    
+    /* a:hover{
+          opacity: 0.75;
+      } */
+    
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    
+    h5 {
+      margin: 0;
+      font-size: 0.85rem;
+    }
+    
+    h6 {
+      margin: 0;
+      font-size: 0.7rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    p {
+      line-height: 1.6;
+    }
+
+    .full-lg-screen {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0 !important;
+    }
+
+    /***************Login Section*******************/
+
+    .title-project{
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: var(--font-text);
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+    }
+
+    .title-input,th,td{
+      font-family: var(--font-text);
+    }
+
+    .section-logo,.section-login{
+      height: 100vh;
+    }
+
+    .section-logo{
+      box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
+    }
+
+    .container-logo{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+    }
+
+    .container-opacity{
+      z-index: 998;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container-project{
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+    }
+
+    .project-section{
+      height: 300px;     
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .video-section{
+      position: absolute;
+      z-index: 997;
+      width: 100%;
+    }
+
+    .register-section{
+      transform: translateY(1000%);
+    }
+
+    .form-template{
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      z-index: 999;
+    }
+
+    .container-nav{
+      height: 60px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
+    .title-nav{
+      font-family: var(--font-logo);
+      letter-spacing: 0.5px;
+    }
+
+    .section-client{
+      height: 20vh;
+    }
+
+    .section-table{
+      /* height: 70vh; */
+    }
+
+    .table-list-update,.table-list-user{
+      position: relative;
+      opacity: 0;
+      transition: all 206ms ease-in-out;
+    }
+  
+    .table-list-update{
+      display: none;
+    }
+  
+  
+    .table-show{
+      opacity: 1;
+    }
+
+    .table-striped{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .section-h{
+      display: none !important;
+    }
+
+    .container-slider{
+      height: 100vh;
+      /* overflow-y: scroll;  */
+      overflow: hidden;
+      transform: translateY(0%);
+    }
+
+    .container-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container-oy{
+      /* transform: translateY(-50%); */
+      transition: all 156ms ease-in;
+    }
+
+    /**********************Animation register/Login****************************/
+
+    .section-log,.section-register{
+      opacity: 0;
+      transition: all 156ms ease-in-out;
+    }
+
+    .section-register{
+      display: none;
+    }
+
+    .login-show{
+      animation-name: loginshow;
+      animation-duration: 256ms;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes loginshow {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /**********************************************************************/
+
+    @media screen and (max-width: 992px) {
+
+      .project-section{
+        justify-content: space-around !important;
+      }
+
+      .title-register{
+        font-size: 0.8rem;
+      }
+
+      .title-input-t {
+        font-size: 0.6rem;
+      }
+
+      .title-project{
+        font-size: 1rem;
+      }
+
+      .section-logo,.video-section{
+        height: 100vh;
+      }
+
+      .video-section{
+        object-fit: cover;
+      }
+
+      .section-login{
+        position:absolute !important;
+        /* height: 60vh; */
+        /* display: none; */
+      }
+
+      .section-log,.section-register{
+        background-color: #fff;
+      }
+
+      .register-section{
+        transform: translateY(0);
+       }
+
+       .container-project{
+        transform: translateY(-25%);
+       }
+
+       .section-log,.section-register{
+        transform: translateY(-25%) !important;
+       }
+    }
+
+
+    @media screen and (max-width: 1024px) {
+      .project-section{
+        height: auto;
+      }
+    }
+
+
+  
