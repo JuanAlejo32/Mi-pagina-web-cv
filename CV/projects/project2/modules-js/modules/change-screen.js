@@ -196,7 +196,10 @@ export const TransitionmusicPlayer = () =>{
       if (e.target.matches(".block-add-vacio-music")) {
         d.querySelector(".slider-menu").style.transform = "translateX(-40%)"
         d.querySelector(".block-vacio-list").style.display = "none"
-        scrollUpDown(".container-menu-aside","down-screen",100)   
+        scrollUpDown(".container-menu-aside","down-screen",100)  
+        d.querySelector(".container-media-player ").classList.add("container-mini-player")
+        d.querySelector(".media-player ").classList.add("hidden-mini-player")
+        d.querySelector(".block-media-mini-player").classList.remove("hidden-mini-player") 
         setTimeout(() => {
             d.querySelector(".block-vacio-list").classList.remove("reveal-error")
         }, 100);
