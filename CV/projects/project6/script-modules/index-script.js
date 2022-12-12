@@ -51,6 +51,7 @@ d.addEventListener("click",e=>{
 
     if (e.target.matches('.container-border-country')) {
             d.querySelector(".container-details").classList.add("transition-opaicity")
+            window.scrollTo({ top: 0,behavior: 'smooth' });
             setTimeout(() => {
                 borderCountries(e)  
             }, 300);

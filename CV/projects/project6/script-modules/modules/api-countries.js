@@ -35,6 +35,8 @@ const apiCountrycall = async(url)=>{
 
         for (let index = 0; index < json.length; index++) {
             const element = json[index];
+
+            // console.log(element.borders);
           
             $template.querySelector(".card").setAttribute('id',element.name.common) 
             $template.querySelector(".card-img-top").src = element.flags.png
@@ -43,6 +45,7 @@ const apiCountrycall = async(url)=>{
             $template.querySelector(".card-region").innerHTML = `<strong>Region:</strong>  ${element.region }`
             $template.querySelector(".card-capital").innerHTML = `<strong>Capital:</strong>  ${element.capital}`
             $template.querySelector(".card").dataset.sub_region = `${element.subregion}`
+            $template.querySelector(".card").dataset.border_countries = element.borders
            
             const nName= json[index].name.nativeName
             if (nName !== undefined) {
@@ -115,10 +118,13 @@ export const loadRegions = async()=>{
 
 export const selectCountry = async(e)=>{
 
+    const url = e.target.dataset.border_countries
+
     $idUrl.href = `#${e.target.querySelector(".card-title").innerText}`
     $flagDetails.src = e.target.querySelector(".card-img-top").src
     $nameDetails.innerText = e.target.querySelector(".card-title").innerText
     $nameNatived.innerHTML = `<strong>Natie Name: </strong> ${e.target.dataset.native_name}` 
+    $nameDetails.dataset.border_countries = e.target.dataset.border_countries
     $populationD.innerHTML = e.target.querySelector(".card-pop").innerHTML
     $regionD.innerHTML = e.target.querySelector(".card-region").innerHTML
     $subregionD.innerHTML = `<strong>Sub Region: </strong> ${e.target.dataset.sub_region}` 
@@ -127,41 +133,43 @@ export const selectCountry = async(e)=>{
     $currencyD.innerHTML =  `<strong>Currencies: </strong> ${e.target.dataset.currencies}`
     $lenguageD.innerHTML = `<strong>Lenguages: </strong> ${e.target.dataset.lenguages}`
 
+    if (url === "undefined") {
+        $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
+    }else{
 
-    try {
-        let res = await fetch(`https://restcountries.com/v3.1/name/${e.target.querySelector(".card-title").innerText}`),
-            json = await res.json()
+        try {
+            let res = await fetch(
+                `https://restcountries.com/v3.1/alpha?codes=${url}`
+            ),
+            json = await res.json();
 
-            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            if (!res.ok)
+            throw { status: res.status, statusText: res.statusText };
 
-        for (let index = 0; index < json.length; index++) {
+            for (let index = 0; index < json.length; index++) {
             const element = json[index];
 
+            $templateBorder.querySelector(".b-title").innerText =
+                element.name.common;
 
-            // console.log(element.borders)
+            $templateBorder.querySelector(
+                ".b-title"
+            ).dataset.sort_name = element.name.common;
 
-            element.borders.forEach(el => {
+            let $clone = d.importNode($templateBorder, true);
+            $fragment.appendChild($clone);
+            }
 
-                $templateBorder.querySelector(".b-title").innerText = el
-
-                $templateBorder.querySelector(".b-title").dataset.sort_name = el
-                 
-                let $clone = d.importNode( $templateBorder,true)
-                    $fragment.appendChild($clone)  
-                          
-            }); 
-
-            $containerbouder.innerHTML = ""
-            $containerbouder.appendChild($fragment)
-        
+            $containerbouder.innerHTML = "";
+            $containerbouder.appendChild($fragment);
+        } catch (error) {
+            let message = error.statusText || "Ocurrió un error";
+            $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`;
         }
 
-        
 
-    } catch (error) {
-        let message = error.statusText || "Ocurrió un error";
-            $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
     }
+
 
 
 }
@@ -169,7 +177,7 @@ export const selectCountry = async(e)=>{
 
 export const borderCountries = async(e)=>{
 
-    let url = `https://restcountries.com/v3.1/alpha/${e.target.querySelector("span").dataset.sort_name}` 
+    let url = `https://restcountries.com/v3.1/name/${e.target.querySelector("span").dataset.sort_name}` 
 
     
 
@@ -186,6 +194,7 @@ export const borderCountries = async(e)=>{
 
                 $flagDetails.src =  element.flags.png
                 $nameDetails.innerText = element.name.common
+                $nameDetails.dataset.border_countries = element.borders
                 $idUrl.href = `#${element.name.common}` 
                 $populationD.innerHTML = `<strong>Population:</strong>  ${element.population}` 
                 $regionD.innerHTML = `<strong>Region:</strong>  ${element.region }`
@@ -223,43 +232,52 @@ export const borderCountries = async(e)=>{
 
             } 
 
-            try {
-                let res = await fetch(`https://restcountries.com/v3.1/name/${d.querySelector(".name-country").innerText}`),
-                    json = await res.json()
-        
-                    if (!res.ok) throw { status: res.status, statusText: res.statusText };
+            const urlb = $nameDetails.dataset.border_countries
 
-                    d.querySelector(".container-details").classList.remove("transition-opaicity")   
-        
-                for (let index = 0; index < json.length; index++) {
-                    const element = json[index];
-        
-        
-                    // console.log(element.borders)
-        
-                    element.borders.forEach(el => {
-        
-                        $templateBorder.querySelector(".b-title").innerText = el
-        
-                        $templateBorder.querySelector(".b-title").dataset.sort_name = el
-                         
-                        let $clone = d.importNode( $templateBorder,true)
-                            $fragment.appendChild($clone)  
-                                  
-                    }); 
-        
+            if (urlb === "undefined") {
+                $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
+            }else{
+
+                try {
+
                     $containerbouder.innerHTML = ""
-                    $containerbouder.appendChild($fragment)
-                
+                    let res = await fetch(`https://restcountries.com/v3.1/alpha?codes=${urlb}`),
+                        json = await res.json()
+            
+                        if (!res.ok) throw { status: res.status, statusText: res.statusText };
+                        
+            
+                    for (let index = 0; index < json.length; index++) {
+                        const element = json[index];
+                        
+            
+            
+                        // console.log(element.name.common)
+            
+                            $templateBorder.querySelector(".b-title").innerText = element.name.common
+            
+                            $templateBorder.querySelector(".b-title").dataset.sort_name = element.name.common
+                             
+                            let $clone = d.importNode( $templateBorder,true)
+                                $fragment.appendChild($clone)  
+                  
+                    }
+            
+                        $containerbouder.appendChild($fragment)
+    
+    
+                        d.querySelector(".container-details").classList.remove("transition-opaicity") 
+                    
+            
+                } catch (error) {
+                    let message = error.statusText || "Ocurrió un error";
+                    d.querySelector(".container-details").classList.remove("transition-opaicity") 
+                        $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
                 }
-        
-                
-        
-            } catch (error) {
-                let message = error.statusText || "Ocurrió un error";
-                    d.querySelector(".container-details").classList.remove("transition-opaicity")   
-                    $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
             }
+
+
+            
         
             
             
