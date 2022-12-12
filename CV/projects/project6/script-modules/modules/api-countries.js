@@ -15,7 +15,8 @@ const $flagDetails = d.querySelector(".flag-img"),
       $capitalD = d.querySelector(".d-capital"),
       $toplevelD = d.querySelector(".d-t-level"),
       $currencyD = d.querySelector(".d-curency"),
-      $lenguageD = d.querySelector(".d-lenguage")
+      $lenguageD = d.querySelector(".d-lenguage"),
+      $idUrl = d.querySelector(".btn-back")
 
 const $templateBorder = d.getElementById('template-borders').content,
       $containerbouder = d.querySelector(".container-borders")
@@ -29,19 +30,20 @@ const apiCountrycall = async(url)=>{
 
             if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
-        // console.log(json[25].borders)
+        // console.log(json[25])
         // console.log(json[25].languages)
 
         for (let index = 0; index < json.length; index++) {
             const element = json[index];
           
-
+            $template.querySelector(".card").setAttribute('id',element.name.common) 
             $template.querySelector(".card-img-top").src = element.flags.png
             $template.querySelector(".card-title").innerText = element.name.common
             $template.querySelector(".card-pop").innerHTML =  `<strong>Population:</strong>  ${element.population}` 
             $template.querySelector(".card-region").innerHTML = `<strong>Region:</strong>  ${element.region }`
             $template.querySelector(".card-capital").innerHTML = `<strong>Capital:</strong>  ${element.capital}`
             $template.querySelector(".card").dataset.sub_region = `${element.subregion}`
+           
             const nName= json[index].name.nativeName
             if (nName !== undefined) {
                 for (const [key,value] of Object.entries(nName)) {$template.querySelector(".card").dataset.native_name = `${value.common}`;}
@@ -113,6 +115,7 @@ export const loadRegions = async()=>{
 
 export const selectCountry = async(e)=>{
 
+    $idUrl.href = `#${e.target.querySelector(".card-title").innerText}`
     $flagDetails.src = e.target.querySelector(".card-img-top").src
     $nameDetails.innerText = e.target.querySelector(".card-title").innerText
     $nameNatived.innerHTML = `<strong>Natie Name: </strong> ${e.target.dataset.native_name}` 
@@ -140,6 +143,8 @@ export const selectCountry = async(e)=>{
             element.borders.forEach(el => {
 
                 $templateBorder.querySelector(".b-title").innerText = el
+
+                $templateBorder.querySelector(".b-title").dataset.sort_name = el
                  
                 let $clone = d.importNode( $templateBorder,true)
                     $fragment.appendChild($clone)  
@@ -155,29 +160,117 @@ export const selectCountry = async(e)=>{
 
     } catch (error) {
         let message = error.statusText || "Ocurrió un error";
-            $containerbouder.innerHTML = "NONE"
+            $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
     }
 
 
 }
 
-            //json[0].subregion 
 
-            //ACEDER A LOS IDIOMAS 
-            //const test = json[230].languages
-            // for (const [key,value] of Object.entries(test)) {
-            //     console.log(value)
-            // }
+export const borderCountries = async(e)=>{
 
-            //ACEDER A LA MONEDA
-            // const test = json[26].currencies
-            // if (test !== undefined) {
-            //     for (const [key,value] of Object.entries(test)) {console.log(value.name);}
-            // } else {
-            //     console.log("No tiene una moneda loca");
-            // }
+    let url = `https://restcountries.com/v3.1/alpha/${e.target.querySelector("span").dataset.sort_name}` 
 
-            //TOP LEVEL DOMAIN
-            //json[23].tld[0]
+    
 
+    try {
+        let res = await fetch(url),
+            json = await res.json()
+
+
+            if (!res.ok) throw { status: res.status, statusText: res.statusText };
+           
+
+            for (let index = 0; index < json.length; index++) {
+                const element = json[index];
+
+                $flagDetails.src =  element.flags.png
+                $nameDetails.innerText = element.name.common
+                $idUrl.href = `#${element.name.common}` 
+                $populationD.innerHTML = `<strong>Population:</strong>  ${element.population}` 
+                $regionD.innerHTML = `<strong>Region:</strong>  ${element.region }`
+                $subregionD.innerHTML = `${element.subregion}`
+                $capitalD.innerHTML = `<strong>Capital:</strong>  ${element.capital}`
+
+                const nName= json[index].name.nativeName
+                if (nName !== undefined) {
+                    for (const [key,value] of Object.entries(nName)) {$nameNatived.innerHTML = `<strong>Natie Name: </strong>  ${value.common}`;}
+                } else {
+                    $nameNatived.innerHTML = `<strong>Natie Name: </strong>  none`
+                }  
+
+
+                const Tld= json[index].tld
+                if (Tld !== undefined) {
+                    for (const [key,value] of Object.entries(Tld)) { $toplevelD.innerHTML = `<strong>Top Level Domain: </strong>  ${value}`}
+                } else {
+                    $toplevelD.innerHTML = `<strong>Top Level Domain: </strong>  none`
+                }
+
+                const currenci = json[index].currencies
+                if (currenci !== undefined) {
+                    for (const [key,value] of Object.entries(currenci)) {$currencyD.innerHTML= `<strong>Currencies: </strong> ${value.name}`}
+                } else {
+                    $currencyD.innerHTML = `<strong>Currencies: </strong> none`
+                }
+
+                const leng = json[index].languages
+                if (leng !== undefined) {
+                    for (const [key,value] of Object.entries(leng)) {$lenguageD.innerHTML = `<strong>Lenguages: </strong>  ${value}`}
+                }else {
+                    $lenguageD.innerHTML  = `<strong>Lenguages: </strong>  none`
+                }                   
+
+            } 
+
+            try {
+                let res = await fetch(`https://restcountries.com/v3.1/name/${d.querySelector(".name-country").innerText}`),
+                    json = await res.json()
+        
+                    if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+                    d.querySelector(".container-details").classList.remove("transition-opaicity")   
+        
+                for (let index = 0; index < json.length; index++) {
+                    const element = json[index];
+        
+        
+                    // console.log(element.borders)
+        
+                    element.borders.forEach(el => {
+        
+                        $templateBorder.querySelector(".b-title").innerText = el
+        
+                        $templateBorder.querySelector(".b-title").dataset.sort_name = el
+                         
+                        let $clone = d.importNode( $templateBorder,true)
+                            $fragment.appendChild($clone)  
+                                  
+                    }); 
+        
+                    $containerbouder.innerHTML = ""
+                    $containerbouder.appendChild($fragment)
+                
+                }
+        
+                
+        
+            } catch (error) {
+                let message = error.statusText || "Ocurrió un error";
+                    d.querySelector(".container-details").classList.remove("transition-opaicity")   
+                    $containerbouder.innerHTML = `<span class="text-center b-title pb-1 light-text">No Border Countries </span>`
+            }
+        
+            
+            
+
+    } catch (error) {
+        let message = error.statusText || "Ocurrió un error";
+
+            console.log(message);
+    }
+
+
+
+}
               
