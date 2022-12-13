@@ -442,6 +442,15 @@
         grid-template-columns: repeat(2,auto);
       }
 
+      .container-border-country{
+        width: 20vw;
+      }
+
+      .container-border-country span{
+        font-size: 2vw;
+      }
+
+
       .container-details{
         width: 100%;
       }
@@ -460,6 +469,15 @@
       #search{
         width: 100%;
       }
+
+      .container-border-country{
+        width: 24vw;
+      }
+
+      .container-border-country span{
+        font-size: 3vw;
+      }
+
 
       .title-proyect,.theme-title{
         height: 100%;
