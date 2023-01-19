@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="shortcut icon" href="../public/img/icon.png" type="image/x-icon">
+    <title>Project 7 Collections</title>
+</head>
+<body class="scroll-h" id="collections">
+
+    <section class="section-loading position-relative justify-content-center align-items-center">
+
+        <div class="wrapper-up-f">
+            <div class="wrapper-loading position-relative">
+                <img class="loading-img" src="../public/img/loading.svg" alt="loading icon">
+            </div>
+        </div>
+        
+    </section>
+    <section class="container-main collection-h position-relative" id="section-main">  
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="goo" version="1.1" width="100%">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+      
+    <div id="cursor"></div>
+
+    <section class="mobile-nav position-fixed">
+      <div class="wrapper-mobile-nav py-4 py-sm-5 py-lg-0 px-2 px-lg-0 mx-auto pt-lg-4 d-flex justify-content-between align-items-center"> 
+          <div class="wrapper-mobile-logo mobile-section d-flex">
+              <img class="mobile-logo " src="../public/img/mobile-logo-w.svg" alt="main-logo">
+          </div>
+          <h1 class="title-project w-m-project ">Project 7</h1>
+          <div class="icon-mobile-p mobile-h-project mobile-section d-flex justify-content-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+              </svg>
+          </div>
+          <div class="cart-section mobile-section d-flex justify-content-end">
+              <h2 class="title-cart text-project hidden-effect-1 w-m-project">CART</h2>
+          </div>
+      </div>
+      <div class="border-line-nav mx-auto"></div>
+
+      <div class="container-mobile-menu mx-auto py-5 d-flex flex-column justify-content-between">
+          <ul>
+              <li><a class="link-mb-menu"  href="../views/index.html">HOME</a></li>
+              <li><a class="link-mb-menu"  href="../views/shop.html">SHOP</a></li>
+              <li><a class="link-mb-menu" href="../views/collections.html">COLLECTIONS</a></li>
+          </ul>
+
+          <div class="container-mobile-socials">
+              <div class="wrapper-footer-img-m pb-5 mobile-socials-f">
+                  <img class="img-social-m" src="../public/img/face.svg" alt="icon-facebook">
+                  <img class="img-social-m" src="../public/img/ig.svg" alt="icon-instagram">
+              </div>
+
+              <div class="wrapper-footer-m py-3 mobile-socials-f">
+                  <a href="https://juanalejo32.github.io/Mi-pagina-web-cv/CV/">Volver a pagina principal ⟶  juan desarrollador web junior</a>
+              </div>
+          </div>           
+      </div>
+  </section>
+  
+    
+
+    <nav class="nav-container py-4 py-sm-5 py-lg-0 px-2 px-lg-0 mx-auto pt-lg-4 d-flex justify-content-between position-sticky align-items-center align-items-lg-start  ">
+
+      <div class="container-logo position-relative mobile-section"> 
+        <div class="wrapper-main-logo d-flex">
+            <img class="main-logo " src="../public/img/logo-1.svg" alt="main-logo">
+            <img class="main-logo side" src="../public/img/logo-1.svg" alt="main-logo-side">
+        </div>
+    </div>
+    
+    <div class="wrapper-mobile-logo mobile-section d-flex">
+        <img class="mobile-logo " src="../public/img/mobile-logo.svg" alt="main-logo">
+    </div>
+    <div class="icon-mobile-p mobile-project mobile-section d-flex justify-content-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </div>         
+        <h1 class="title-project h-title">Project 7</h1>
+    <div class="cart-section mobile-section d-flex justify-content-end">
+        <h2 class="title-cart text-project hidden-effect-1">CART</h2>
+    </div>
+
+    <div class="menu-nav">
+        <div class="ww-nav wrapper-shop d-flex flex-column mb-2">
+            <span class="nav-text">SHOP</span>
+            <span class="nav-text">SHOP</span>
+        </div>
+        <div class="ww-nav wrapper-collect d-flex flex-column mb-2">
+            <span class="nav-text">COLLECTIONS</span>
+            <span class="nav-text">COLLECTIONS</span>
+        </div>
+        <div class="ww-nav wrapper-about d-flex flex-column">
+            <span class="nav-text">ABOUT</span>
+            <span class="nav-text">ABOUT</span>
+        </div>
+    </div>
+
+          
+            <div class="container-carousel-control position-fixed d-flex justify-content-between align-items-center">
+                <div class="wrapper-number-carousel">
+                    <div class="wrapper-count-banner d-flex">
+                        <ul class="count-slider">
+                          <li>01</li>
+                          <li>02</li>
+                          <li>03</li>
+                          <li>04</li>
+                          <li>05</li>
+                          <li>06</li>
+                          <li>07</li>
+                          <li>08</li>
+                          <li>09</li>
+                        </ul>
+                        <span>/09</span>
+                    </div>
+                </div>
+                <div class="mx-5 wrapper-progress-carousel">
+                    <div class="progress-carousel"></div>
+                </div>
+                <div class="wrapper-control-carousel d-flex justify-content-between align-items-center">
+                    <div class="wrapper-explorer-arrow me-4 me-lg-0 arrow-c-left d-flex align-items-center">
+                        <a class="d-flex position-relative" href=""><img class="arrow-img arrow-control-l position-absolute" src="../public/img/arrow.svg" alt=""><img class="arrow-wrapper arrow-control-w" src="../public/img/wrapper-arrow.svg" alt=""></a>
+                    </div>
+                    <div class="wrapper-explorer-arrow arrow-c-right d-flex align-items-center">
+                        <a class="d-flex position-relative" href=""><img class="arrow-img arrow-control-r position-absolute" src="../public/img/arrow.svg" alt=""><img class="arrow-wrapper arrow-control-w" src="../public/img/wrapper-arrow.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+      <div class="container-carousel-collection position-absolute">
+          <div class="container-framework position-absolute d-flex justify-content-center align-items-center">
+              <div class="wrapper-framework border border-4 border-dark ">
+
+              </div>
+          </div>
+          <div>          
+      </div>
+
+        <div class="container-banner-2 position-absolute d-flex align-items-center">
+          <div class="swiper swiper-banner-2 wrapper-slider-text-2">
+            <div class="swiper-wrapper  animation-banner">
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor. </h2>
+                </div>
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor.</h2>
+                </div>
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor.</h2>
+                </div>
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor.</h2>
+                </div>
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor.</h2>
+                </div>
+                <div class="swiper-slide slider-text-2 d-flex align-items-center">
+                    <h2 class="">Colour shades mixed with urban trekking art and outdoor.</h2>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-carousels position-relative">
+          <div class="swiper mySwiper4 position-relative d-flex align-items-center">
+            <div class="swiper-wrapper wrapper-collection ">
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-1.jpeg" alt="collect-1" id="0">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img " src="../public/img/collect-2.jpeg" alt="collect-2 " id="1">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-3.jpeg" alt="collect-3"  id="2">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-4.jpeg" alt="collect-4"  id="3">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-5.jpg" alt="collect-5"  id="4">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-6.jpeg" alt="collect-6"  id="5">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-7.jpeg" alt="collect-7"  id="6">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-8.jpeg" alt="collect-8"  id="7">
+              </div>
+              <div class="swiper-slide collect-slide">
+                <img class="collect-img" src="../public/img/collect-9.jpeg" alt="collect-9"  id="8">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    
+    <section class="loading-page position-fixed">
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="../script-modules/collections.js" type="module"></script>
+</body>
+</html>
