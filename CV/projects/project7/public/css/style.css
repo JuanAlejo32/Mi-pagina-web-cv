@@ -1311,13 +1311,14 @@
 
   .collect-img{
     object-fit: cover;
+    object-position: top;
     width: 400px;
-    height: 560px;
+    height: 70vh;
   }
 
   .wrapper-framework{
+    height: 70vh;
     width: 400px;
-    height: 560px;
     pointer-events: none;
   }
 
@@ -1325,11 +1326,11 @@
   .collect-slide{
     background-color: transparent;
     width: 400px;
-    height: 560px;
+    height: 70vh;
   }
 
   .wrapper-collection{
-    height: 560px;
+    height: 70vh;
     width: 400px;
   }
 
@@ -1818,7 +1819,7 @@
 
     .wrapper-collection,.wrapper-framework,.collect-img{
       width: 350px;
-      height: 490px;
+      height: 60vh;
     }
 
     .collect-slide{
