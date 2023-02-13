@@ -357,91 +357,89 @@ export const musicPlayerLoaderList = async () =>{
 
 const artistaAleatorio = () =>{
 
-    let artisList = [{idartists:14,name:"GORILLAZ",img:"https://e-cdns-images.dzcdn.net/images/artist/77f5ea79673e2cfb77dd1078e37db82e/250x250-000000-80-0-0.jpg"},
-                       {idartists:12487862,name:"BIZARRAP",img:"https://e-cdns-images.dzcdn.net/images/artist/e121c1ef9b1135e6a5b71c1e65ab10b4/250x250-000000-80-0-0.jpg"},
-                       {idartists:10583405,name:"BAD BUNNY",img:"https://e-cdns-images.dzcdn.net/images/artist/f21443a563e5d03ddf83ed1e6a12d581/250x250-000000-80-0-0.jpg"},
-                       {idartists:434,name:"DJ TIESTO",img:"https://e-cdns-images.dzcdn.net/images/artist/b6ff15612b6ef51e5a552e4bd6abefd6/250x250-000000-80-0-0.jpg"},
-                       {idartists:8706544,name:"DUA LIPA",img:"https://e-cdns-images.dzcdn.net/images/artist/e6a04d735093a46dcc8be197681d1199/250x250-000000-80-0-0.jpg"},
-                       {idartists:7543848,name:"POST MALONE",img:"https://e-cdns-images.dzcdn.net/images/artist/a5a8cca44e7eab2db7d44e039bed2574/250x250-000000-80-0-0.jpg"},
-                       {idartists:464,name:"RAMMSTEIN",img:"https://e-cdns-images.dzcdn.net/images/artist/f22cac6a41e838f54d2c7b4ea47b5f94/250x250-000000-80-0-0.jpg"},
-                       {idartists:4902904,name:"DUKI",img:"https://e-cdns-images.dzcdn.net/images/artist/342b6c7cb35ff0e44d482597aad0cc9e/250x250-000000-80-0-0.jpg"},
-                       {idartists:1458571,name:"LOW ROAR",img:"https://e-cdns-images.dzcdn.net/images/artist/02d3ac13f9c055c892244a8cb0d1fa8f/250x250-000000-80-0-0.jpg"}]   
-    
-    artisList = artisList.sort(function() {return Math.random() - 0.5});
+  let artisList = [{idartists:2931542082,name:"GORILLAZ",img:"https://e-cdns-images.dzcdn.net/images/artist/77f5ea79673e2cfb77dd1078e37db82e/250x250-000000-80-0-0.jpg"},
+                     {idartists:7765437942,name:"BIZARRAP",img:"https://e-cdns-images.dzcdn.net/images/artist/e121c1ef9b1135e6a5b71c1e65ab10b4/250x250-000000-80-0-0.jpg"},
+                     {idartists:4962683744,name:"BAD BUNNY",img:"https://e-cdns-images.dzcdn.net/images/artist/f21443a563e5d03ddf83ed1e6a12d581/250x250-000000-80-0-0.jpg"},
+                     {idartists:7615937942,name:"DJ TIESTO",img:"https://e-cdns-images.dzcdn.net/images/artist/b6ff15612b6ef51e5a552e4bd6abefd6/250x250-000000-80-0-0.jpg"},
+                     {idartists:4880867664,name:"DUA LIPA",img:"https://e-cdns-images.dzcdn.net/images/artist/e6a04d735093a46dcc8be197681d1199/250x250-000000-80-0-0.jpg"},
+                     {idartists:5002501564,name:"POST MALONE",img:"https://e-cdns-images.dzcdn.net/images/artist/a5a8cca44e7eab2db7d44e039bed2574/250x250-000000-80-0-0.jpg"},
+                     {idartists:5476370562,name:"RAMMSTEIN",img:"https://e-cdns-images.dzcdn.net/images/artist/f22cac6a41e838f54d2c7b4ea47b5f94/250x250-000000-80-0-0.jpg"},
+                     {idartists:7313325724,name:"DUKI",img:"https://e-cdns-images.dzcdn.net/images/artist/342b6c7cb35ff0e44d482597aad0cc9e/250x250-000000-80-0-0.jpg"},
+                     {idartists:3382903206,name:"LINKIN PARK",img:"https://e-cdn-images.dzcdn.net/images/artist/dc03c750d2a9f95840b58f391cd6e413/264x264-000000-80-0-0.jpg"}]   
+  
+  artisList = artisList.sort(function() {return Math.random() - 0.5});
 
 return artisList.slice(0,4)
 }
 
 export const TopArtists = () => {
-  const artistsProminent = artistaAleatorio();
+const artistsProminent = artistaAleatorio();
 
-  for (let index = 0; index < artistsProminent.length; index++) {
-    const element = artistsProminent[index];
+for (let index = 0; index < artistsProminent.length; index++) {
+  const element = artistsProminent[index];
 
-    $templateCardartists.querySelector("img").src = element.img,
-    $templateCardartists.querySelector("img").alt = `${element.name}_img` ,
-    $templateCardartists.querySelector(".card-artists-name").innerText = element.name,
-    $templateCardartists.querySelector(".card-artists-name").dataset.id_artists = element.idartists
+  $templateCardartists.querySelector("img").src = element.img,
+  $templateCardartists.querySelector("img").alt = `${element.name}_img` ,
+  $templateCardartists.querySelector(".card-artists-name").innerText = element.name,
+  $templateCardartists.querySelector(".card-artists-name").dataset.id_artists = element.idartists
 
-    let $clon = d.importNode($templateCardartists, true);
-    $fragment.appendChild($clon);
-  }
-  $containerCardartists.appendChild($fragment);
-  $loader.style.display = "none";
+  let $clon = d.importNode($templateCardartists, true);
+  $fragment.appendChild($clon);
+}
+$containerCardartists.appendChild($fragment);
+$loader.style.display = "none";
 };
 
 
 export const loadArtiststrack  = async(idArtists) =>{
 
-    // console.log(idArtists)
+  // console.log(idArtists)
 
-    $containerPlaylistartists.innerHTML =""
+  $containerPlaylistartists.innerHTML =""
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '51a78223c8mshdb4d63b7fe6014bp142c3ejsncc1f06bd9379',
-            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-        }
-    };
-    
-    fetch(`https://deezerdevs-deezer.p.rapidapi.com/artist/${idArtists}/top?limit=50`, options)
-        .then(response => response.json(), $loaderArtists.style.display = "block")
-        .then(response =>{  const bdresponse = response.data   
-            
-            templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
-            LoadtrackselectStorage(bdresponse)
-            bdPlaylistload("playlistselect")  
-            $loaderArtists.style.display = "none"}
-
-       
-            )
-        .catch(err => console.error(err));
+  const options = {
+      method: 'GET',
+      headers: {
+          'X-RapidAPI-Key': '51a78223c8mshdb4d63b7fe6014bp142c3ejsncc1f06bd9379',
+          'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+      }
+  };
+  
+  fetch(`https://deezerdevs-deezer.p.rapidapi.com/playlist/${idArtists}`, options)
+      .then(response => response.json(), $loaderArtists.style.display = "block")
+      .then(response =>{  const bdresponse = response.tracks.data   
+          
+          templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
+          LoadtrackselectStorage(bdresponse)
+          bdPlaylistload("playlistselect")  
+          $loaderArtists.style.display = "none"}
+          )
+      .catch(err => console.error(err));
 }
 
 export const loadPlaylists  = async(idplay) =>{
 
-    // console.log(idArtists)
+  // console.log(idArtists)
 
-    $containerPlaylistartists.innerHTML =""
+  $containerPlaylistartists.innerHTML =""
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '51a78223c8mshdb4d63b7fe6014bp142c3ejsncc1f06bd9379',
-            'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
-        }
-    };
-    
-    fetch(`https://deezerdevs-deezer.p.rapidapi.com/playlist/${idplay}`, options)
-        .then(response => response.json(), $loaderArtists.style.display = "block")
-        .then(response =>{ const bdresponse = response.tracks.data 
-            
-            templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
-            LoadtrackselectStorage(bdresponse)
-            bdPlaylistload("playlistselect")  
-            $loaderArtists.style.display = "none"}
-       
-            )
-        .catch(err => console.error(err));
+  const options = {
+      method: 'GET',
+      headers: {
+          'X-RapidAPI-Key': '51a78223c8mshdb4d63b7fe6014bp142c3ejsncc1f06bd9379',
+          'X-RapidAPI-Host': 'deezerdevs-deezer.p.rapidapi.com'
+      }
+  };
+  
+  fetch(`https://deezerdevs-deezer.p.rapidapi.com/playlist/${idplay}`, options)
+      .then(response => response.json(), $loaderArtists.style.display = "block")
+      .then(response =>{ const bdresponse = response.tracks.data 
+          
+          templateTracklist(bdresponse,$templatetrackPlaylist,$containerPlaylistartists)
+          LoadtrackselectStorage(bdresponse)
+          bdPlaylistload("playlistselect")  
+          $loaderArtists.style.display = "none"}
+     
+          )
+      .catch(err => console.error(err));
 }
