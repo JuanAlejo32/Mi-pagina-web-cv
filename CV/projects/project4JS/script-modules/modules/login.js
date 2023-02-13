@@ -65,7 +65,7 @@ export const validationLogin = (user,pass)=>{
             timer:false,})
     }
     
-   if (validaLogin === validaPassword) {
+   if (validaLogin >=0 && validaPassword >= 0) {
 
         
             createTableDB()
@@ -94,8 +94,4 @@ export const validationLogin = (user,pass)=>{
             timer:false,})
    }
     
-
-
-
-
 }

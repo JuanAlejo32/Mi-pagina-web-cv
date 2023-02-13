@@ -46,7 +46,9 @@ export const validationLogin = (user,pass)=>{
           validaLogin = validaCoincidencia(userF,"user",dbuser),
           validaPassword = validaCoincidencia(passF,"pass",dbuser)
 
-    if (userF.length ===0 || passF.length ===0) {
+          console.log(validaLogin,validaPassword)
+
+    if (userF.length === 0 || passF.length ===0) {
         return Swal.fire({
             title:'Error !',
             text:'Usuario y/o password se encuentra vacia !',
@@ -56,7 +58,7 @@ export const validationLogin = (user,pass)=>{
     }
 
 
-    if (validaLogin == -1 && validaPassword == -1) {
+    if (validaLogin === -1 && validaPassword === -1) {
         return Swal.fire({
             title:'Error !',
             text:'Usuario y/o password incorrectas !',
@@ -65,7 +67,7 @@ export const validationLogin = (user,pass)=>{
             timer:false,})
     }
     
-   if (validaLogin === validaPassword) {
+   if (validaLogin >=0 && validaPassword >= 0) {
 
         if (dbuser[validaLogin].rol ==="admin") {
 
@@ -104,8 +106,5 @@ export const validationLogin = (user,pass)=>{
             timer:false,})
    }
     
-
-
-
 
 }

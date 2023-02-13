@@ -37,7 +37,7 @@ export const validaRegister =()=>{
 
         if (validaCoincidencia($regUser.value,"user",dbUser) === -1) {
             
-            dbUser.push({user:$regUser.value,name:$regName.value,rol:$regRol.value,pass:$regPass.value})
+            dbUser.push({user:$regUser.value.toLowerCase(),name:$regName.value,rol:$regRol.value,pass:$regPass.value})
 
             localStorage.setItem("dbuser",JSON.stringify(dbUser))
     
