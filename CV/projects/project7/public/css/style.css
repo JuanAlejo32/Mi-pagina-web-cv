@@ -1313,11 +1313,11 @@
     object-fit: cover;
     object-position: top;
     width: 400px;
-    height: 70vh;
+    height:  73vh;
   }
 
   .wrapper-framework{
-    height: 70vh;
+    height:  73vh;
     width: 400px;
     pointer-events: none;
   }
@@ -1326,11 +1326,11 @@
   .collect-slide{
     background-color: transparent;
     width: 400px;
-    height: 70vh;
+    height:  73vh;
   }
 
   .wrapper-collection{
-    height: 70vh;
+    height:  73vh;
     width: 400px;
   }
 
