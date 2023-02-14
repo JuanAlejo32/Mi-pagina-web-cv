@@ -140,6 +140,36 @@
   letter-spacing: 2px;
 }
 
+.container-experience{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-experience{
+  text-align: center;
+  font-family: var(--font-text);
+  font-size: 1.5rem;
+}
+
+.title-job-exp{
+  font-family: var(--font-text);
+  font-size: 1.5rem;
+}
+
+.job,.time-job,.position-job{
+  font-size: 0.8rem;
+  font-family: var(--font-text);
+}
+
+.block-experience{
+  padding-top: 3rem;
+}
+
+.img-job{
+  width: 100%;
+}
+
 .container-info-print{
   display: grid;
   grid-template-areas: "minfo-picture minfo minfo"
@@ -148,7 +178,8 @@
                        "personaldata miskills-title miskills-title"
                        "personaldata skill skill"
                        "personaldata estudies-title estudies-title"
-                       "personaldata studies studies";
+                       "personaldata studies studies"
+                       "container-experience container-experience container-experience";
   grid-template-columns: auto auto 200px;
 }
 
