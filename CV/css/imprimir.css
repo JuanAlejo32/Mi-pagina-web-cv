@@ -25,11 +25,10 @@
 }
 
 .container-minfo-picture img{
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: 15%;
+  object-fit: scale-down;
   width: 200px;
   height: 200px;
-
 }
 
 .container-personaldata{
@@ -116,7 +115,7 @@
 
 .container-studie li{
   font-size: 0.8rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .container-studie h2,
@@ -144,6 +143,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .title-experience{
@@ -154,16 +155,29 @@
 
 .title-job-exp{
   font-family: var(--font-text);
-  font-size: 1.5rem;
+  font-size: 1rem;
+  border-bottom: solid 2px black;
+}
+
+.block-experience a{
+  font-size: 0.8rem;
 }
 
 .job,.time-job,.position-job{
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-family: var(--font-text);
 }
 
+.time-job,.position-job{
+  margin-top: 0.3rem;
+}
+
+.block-experience li{
+  font-size: 0.8rem;
+}
+
 .block-experience{
-  padding-top: 3rem;
+  /* padding-top: 0.4rem; */
 }
 
 .img-job{
